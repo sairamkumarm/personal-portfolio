@@ -18,7 +18,7 @@ const resumeData: ResumeData = {
   },
   bio: {
     content:
-      "SAIRAMKUMAR IS A DEVELOPER AND STRATEGIST WHO BUILDS SYSTEMS AT THE INTERSECTION OF INFRASTRUCTURE AND OPERATIONAL DESIGN. HE SPECIALIZES IN BACKEND SYSTEMS, MICROSERVICE ARCHITECTURES, AND DISTRIBUTED MONITORING PLATFORMS.",
+      "Building backends that scale; today and tomorrow.",
     renderIndex: 3,
   },
   skills: {

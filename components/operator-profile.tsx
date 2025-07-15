@@ -110,14 +110,27 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               {/* Right side - Actions with backdrop blur */}
               <div className="flex gap-2 sm:gap-4 items-center flex-wrap">
                 <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6200}>
+                <a
+                  href={process.env.NEXT_PUBLIC_RESUME_STATIC_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="resume-link"
+                >
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     RESUME.PDF
                   </GlitchComponent>
+                  </a>
                 </RenderSequence>
                 <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6400}>
+                <a
+  href="mailto:sairamkumar.m@outlook.com"
+  className=""
+>
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     CONTACT
                   </GlitchComponent>
+                  </a>
                 </RenderSequence>
                 <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6600}>
                   <ThemeToggle />
@@ -184,6 +197,10 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                     {/* Contact - Responsive */}
                     <div className="text-xs break-all sm:text-sm text-theme-secondary">
+                    <a
+  href="mailto:sairamkumar.m@outlook.com"
+  className=""
+>
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
                         shouldStart={textPhaseActive}
@@ -192,6 +209,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       >
                         {data.personal_info.contact}
                       </GlitchComponent>
+                      </a>
                     </div>
 
                     {/* Links - Responsive Flex */}
@@ -214,7 +232,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                   {/* Col 2: Photo - Enhanced Responsive Sizing */}
                   <div className="flex justify-center ">
-                    <div className="max-w-[80%] md:max-w-[100%] h-auto">
+                    <div className="max-w-[80%] h-auto">
                       <GlitchImage
                         src="/images/halftone_flattened_white.png"
                         alt="Profile"
