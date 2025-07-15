@@ -12,7 +12,7 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
   return (
     <button
       onClick={toggleTheme}
-      className={`px-1 text-sm ${className}`}
+      className={`px-1 ${className}`}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
     >            
     <span className="bracket-interactive px-0.5">

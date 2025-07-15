@@ -92,11 +92,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
           >
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm py-2 gap-2 sm:gap-4">
               {/* Left side - Title with backdrop blur */}
-              <div className="tracking-wider backdrop-blur-md bg-theme-secondary px-1 w-fit flex gap-1 items-center">
+              <div className="tracking-wider backdrop-blur-md bg-theme-secondary pr-1 w-fit flex gap-1 items-center">
                 <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                   {data.personal_info.name}
                 </GlitchComponent>
-                <span className="text-theme-primary hidden sm:inline">
+                <span className="text-theme-primary">
                   <GlitchComponent delay={0} className="" shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     <b className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       {" "}
@@ -214,7 +214,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                   {/* Col 2: Photo - Enhanced Responsive Sizing */}
                   <div className="flex justify-center ">
-                    <div className="max-w-[100%] h-auto">
+                    <div className="max-w-[80%] md:max-w-[100%] h-auto">
                       <GlitchImage
                         src="/images/halftone_flattened_white.png"
                         alt="Profile"
