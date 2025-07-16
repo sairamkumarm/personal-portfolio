@@ -62,6 +62,7 @@ export interface Education {
   degree: string
   institution: string
   duration: string
+  grade:string
 }
 
 export interface EducationSection {

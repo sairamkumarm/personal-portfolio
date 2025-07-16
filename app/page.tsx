@@ -122,7 +122,7 @@ const resumeData: ResumeData = {
         {
           org: "WIBBLIT (RESUMETWEAKER)",
           role: "CO-FOUNDER & DEVELOPER",
-          duration: "SEP 2024 – JUN 2025",
+          duration: "SEP 2024 - JUN 2025",
           description: [
             "BUILT A TYPESCRIPT-BASED WEB APP FOR AI-DRIVEN RESUME REPHRASING, JOB MATCHING, AND INTERVIEW PREP.",
             "IMPLEMENTED CLIENT-SIDE PDF PARSING AND STRUCTURED JSON EXTRACTION.",
@@ -138,7 +138,8 @@ const resumeData: ResumeData = {
         {
           degree: "B.E. COMPUTER SCIENCE",
           institution: "VISVESVARAYA TECHNOLOGICAL UNIVERSITY (HKBKCE)",
-          duration: "DEC 2021 – JUN 2025",
+          duration: "DEC 2021 - JUN 2025",
+          grade: "9.24"
         },
       ],
       renderIndex: 7,

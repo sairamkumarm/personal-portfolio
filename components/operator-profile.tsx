@@ -78,8 +78,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
   return (
     <div
-      className={`min-h-screen bg-theme-primary text-theme-primary font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}
-    >
+      className={`min-h-screen bg-theme-primary text-theme-primary font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}>
       {/* Debug Mode Indicator */}
       {DEBUG_MODE && <div className="fixed top-2 right-2 z-50 bg-red-600 text-white px-2 py-1 text-sm">DEBUG MODE</div>}
 
@@ -123,10 +122,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </a>
                 </RenderSequence>
                 <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6400}>
-                <a
-  href="mailto:sairamkumar.m@outlook.com"
-  className=""
->
+                <a href="mailto:sairamkumar.m@outlook.com">
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     CONTACT
                   </GlitchComponent>
@@ -148,7 +144,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
           <div className="relative">
             <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 400}>
               <div className="absolute right-0 top-0 w-px h-full hidden lg:block">
-                <div className="border-r border-theme-secondary vertical-line-build"></div>
+                <div className="border-r border-theme-secondary border-build"></div>
               </div>
             </RenderSequence>
 
@@ -197,10 +193,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                     {/* Contact - Responsive */}
                     <div className="text-xs break-all sm:text-sm text-theme-secondary">
-                    <a
-  href="mailto:sairamkumar.m@outlook.com"
-  className=""
->
+                    <a href="mailto:sairamkumar.m@outlook.com">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
                         shouldStart={textPhaseActive}
@@ -344,15 +337,35 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             debugMode={DEBUG_MODE}
                             className="text-theme-secondary"
                           >
-                            {edu.institution}, {edu.duration}
+                            {edu.institution}
+                          </GlitchComponent>
+                        </span>
+                        <span className="text-theme-secondary flex justify-between 1">
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-secondary"
+                          >
+                            {"GRADE: "} {edu.grade}
+                          </GlitchComponent>
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-secondary"
+                          >
+                            {edu.duration}
                           </GlitchComponent>
                         </span>
                       </div>
                     </div>
                   </div>
                 ))}
+                <AnimatedDivider delay={calculateDelay(data.sections.education.renderIndex)} />
               </div>
             </div>
+                    
           </div>
         </div>
 

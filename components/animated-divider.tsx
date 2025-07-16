@@ -17,7 +17,7 @@ export function AnimatedDivider({ delay = 0, className = "", type = "horizontal"
 
   return (
     <RenderSequence phase="lines" delay={delay} className={className}>
-      <div className="border-t border-theme-secondary"></div>
+      <div className="border-t border-theme-secondary border-build"></div>
     </RenderSequence>
   )
 }
