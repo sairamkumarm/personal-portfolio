@@ -95,7 +95,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                   {data.personal_info.name}
                 </GlitchComponent>
-                <span className="text-theme-primary">
+                <span className="text-theme-secondary">
                   <GlitchComponent delay={0} className="" shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     <b className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       {" "}
@@ -257,7 +257,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
               {/* Skills Block - Enhanced Responsive */}
               <div className="space-y-4">
-                <div className="text-base sm:text-lg tracking-wider">
+                <div className="text-base sm:text-lg font-semibold tracking-wider">
                   <GlitchComponent
                     delay={calculateDelay(data.skills.renderIndex)}
                     shouldStart={textPhaseActive}
@@ -303,7 +303,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
               {/* Education Section - Enhanced Responsive */}
               <div className="space-y-4">
-                <div className="text-base sm:text-lg tracking-wider">
+                <div className="text-base sm:text-lg font-semibold tracking-wider">
                   <GlitchComponent
                     delay={calculateDelay(data.sections.education.renderIndex)}
                     shouldStart={textPhaseActive}
@@ -481,7 +481,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
           {/* Experience Section - Enhanced Responsive */}
           <div className="space-y-6">
-            <div className="text-base sm:text-lg tracking-wider">
+            <div className="text-base sm:text-lg font-semibold tracking-wider">
               <GlitchComponent
                 delay={calculateDelay(data.sections.experience.renderIndex)}
                 shouldStart={textPhaseActive}
@@ -605,9 +605,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
         <footer className="p-4 text-center text-xs sm:text-sm tracking-wider">
           <div className="border-t border-theme-primary border-build" style={{ animationDelay: "0s" }}>
             <div className="py-4">
-              <span className="block sm:inline">[ BUILT BY SAIRAMKUMAR M ]</span>
+              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>BUILT BY SAIRAMKUMAR M<span className="bracket-accent">]</span></span>
               <span className="hidden sm:inline"> ⁝⁝⁝ </span>
-              <span className="block sm:inline">[ NO COOKIES | NO TRACKERS ]</span>
+              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>NO COOKIES | NO TRACKERS<span className="bracket-accent">]</span></span>
             </div>
           </div>
         </footer>
