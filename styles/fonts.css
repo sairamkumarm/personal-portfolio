@@ -1,0 +1,72 @@
+/* Jozsika Font Family */
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikathin.woff2") format("woff2"), url("/fonts/jozsikathin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikaextralight.woff2") format("woff2"), url("/fonts/jozsikaextralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikalight.woff2") format("woff2"), url("/fonts/jozsikalight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikaregular.woff2") format("woff2"), url("/fonts/jozsikaregular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikamedium.woff2") format("woff2"), url("/fonts/jozsikamedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikasemibold.woff2") format("woff2"), url("/fonts/jozsikasemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikabold.woff2") format("woff2"), url("/fonts/jozsikabold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikaextrabold.woff2") format("woff2"), url("/fonts/jozsikaextrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Jozsika";
+  src: url("/fonts/jozsikaheavy.woff2") format("woff2"), url("/fonts/jozsikaheavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

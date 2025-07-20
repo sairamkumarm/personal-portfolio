@@ -1,3 +1,4 @@
+@import url("../styles/fonts.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -56,8 +57,8 @@
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: "Space Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo", "Consolas",
-      monospace;
+    font-family: "Jozsika", "Space Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo",
+      "Consolas", monospace;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -181,7 +182,8 @@
 }
 
 .glitch-image-subtle {
-  animation: 0.15s image-glitch-subtle infinite;}
+  animation: 0.15s image-glitch-subtle infinite;
+}
 
 @keyframes overlay-glitch-in {
   0% {
@@ -206,7 +208,6 @@
   animation: overlay-glitch-in 0.15s infinite;
   pointer-events: none;
 }
-
 
 /* Enhanced glitch and flicker effects - theme aware */
 @keyframes flicker {
@@ -325,7 +326,6 @@
     opacity: 1;
   }
 }
-
 
 @keyframes vertical-line-build {
   0% {

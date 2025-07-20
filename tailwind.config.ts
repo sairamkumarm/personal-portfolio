@@ -19,6 +19,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         mono: [
+          "Jozsika",
           "Space Mono",
           "SF Mono",
           "Monaco",
@@ -29,6 +30,7 @@ const config: Config = {
           "Consolas",
           "monospace",
         ],
+        jozsika: ["Jozsika", "monospace"],
       },
       colors: {
         background: "hsl(var(--background))",
