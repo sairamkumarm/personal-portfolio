@@ -19,7 +19,7 @@ export function GlitchImage({
   className = "",
 }: GlitchImageProps) {
   const [isVisible, setIsVisible] = useState(debugMode)
-  const [shouldGlitchIn, setShouldGlitchIn] = useState(debugMode)
+  const [shouldGlitchIn, setShouldGlitchIn] = useState(false)
 
   useEffect(() => {
     if (!shouldStart || debugMode) return
@@ -43,7 +43,7 @@ export function GlitchImage({
         alt={alt}
         className="w-full h-full object-cover"
       />
-      {shouldGlitchIn && (
+      {shouldGlitchIn && !debugMode && (
         <div className="absolute inset-0 glitch-overlay z-10" />
       )}
     </div>

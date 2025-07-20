@@ -434,7 +434,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 </div>
                 <div className="space-y-2 text-xs sm:text-sm">
                   {/* Project Description - Enhanced Responsive */}
-                  <div className="leading-relaxed text-theme-muted tracking-wide space-y-1">
+                  <div className="leading-relaxed text-theme-muted font-light tracking-wide space-y-1">
                     {project.description.length === 1 ? (
                       // Single item - render as paragraph
                       <GlitchComponent
@@ -554,7 +554,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 </div>
 
                 {/* Experience Description - Enhanced Responsive */}
-                <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide space-y-1">
+                <div className="text-xs sm:text-sm leading-relaxed font-light text-theme-secondary tracking-wide space-y-1">
                   {exp.description.length === 1 ? (
                     // Single item - render as paragraph
                     <GlitchComponent
