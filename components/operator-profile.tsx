@@ -168,7 +168,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Role - Responsive */}
-                    <div className="text-base sm:text-lg lg:text-xl text-theme-accent tracking-wider">
+                    <div className="text-base font-semibold sm:text-lg lg:text-xl text-theme-accent tracking-wider">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 1)}
                         shouldStart={textPhaseActive}
@@ -214,7 +214,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className="text-theme-accent text-xs sm:text-sm"
+                            className=" text-xs sm:text-sm"
                           >
                             {link.label}
                           </GlitchComponent>
@@ -275,9 +275,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10)}
                           shouldStart={textPhaseActive}
                           debugMode={DEBUG_MODE}
-                          className="text-theme-primary"
+                          className=""
                         >
-                          {">"} {category.name}
+                          {"›"} {category.name}
                         </GlitchComponent>
                       </div>
                       <div className="flex flex-wrap gap-1">
@@ -288,7 +288,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                               delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10 + skillIndex + 1)}
                               shouldStart={textPhaseActive}
                               debugMode={DEBUG_MODE}
-                              className="text-theme-accent text-xs"
+                              className=" text-xs"
                             >
                               {skill}
                             </GlitchComponent>
@@ -325,12 +325,12 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             debugMode={DEBUG_MODE}
                             className="text-theme-primary"
                           >
-                            {">"} {edu.degree}
+                            {edu.degree}
                           </GlitchComponent>
                         </span>
                       </div>
                       <div>
-                        <span className="text-theme-secondary">
+                        <span className="text-theme-secondary font-light">
                           <GlitchComponent
                             delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
                             shouldStart={textPhaseActive}
@@ -340,7 +340,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             {edu.institution}
                           </GlitchComponent>
                         </span>
-                        <span className="text-theme-secondary flex justify-between 1">
+                        <span className="text-theme-secondary font-light flex justify-between 1">
                           <GlitchComponent
                             delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
                             shouldStart={textPhaseActive}
@@ -373,7 +373,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
         <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
           {/* Projects Section - Enhanced Responsive */}
           <div className="space-y-6">
-            <div className="text-base sm:text-lg tracking-wider">
+            <div className="text-base font-semibold sm:text-lg tracking-wider">
               <GlitchComponent
                 delay={calculateDelay(data.sections.projects.renderIndex)}
                 shouldStart={textPhaseActive}
@@ -406,7 +406,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15 + linkIndex + 1)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className="text-theme-accent"
+                            className=""
                           >
                             {link.label}
                           </GlitchComponent>
@@ -416,7 +416,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </div>
                 </div>
                 <div className="space-y-1 text-xs sm:text-sm">
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap font-normal gap-1">
                     {project.stack.map((tech, techIndex) => (
                       <span key={`project-${index}-tech-${techIndex}`}>
                         <GlitchComponent
@@ -424,7 +424,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15 + techIndex + 3)}
                           shouldStart={textPhaseActive}
                           debugMode={DEBUG_MODE}
-                          className="text-theme-accent"
+                          className=""
                         >
                           {tech}
                         </GlitchComponent>
@@ -454,7 +454,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                               delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15 + pointIndex)}
                               shouldStart={textPhaseActive}
                               debugMode={DEBUG_MODE}
-                              className="text-theme-primary"
+                              className="text-theme-muted"
                             >
                               •
                             </GlitchComponent>
@@ -574,7 +574,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.sections.experience.renderIndex, 2, index * 10 + pointIndex)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className="text-theme-primary"
+                            className="text-theme-muted"
                           >
                             •
                           </GlitchComponent>
@@ -584,7 +584,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.sections.experience.renderIndex, 2, index * 10 + pointIndex)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className="text-theme-secondary"
+                            className="text-theme-muted"
                           >
                             {point}
                           </GlitchComponent>

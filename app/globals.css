@@ -156,7 +156,6 @@
 }
 
 .bracket-interactive .bracket-content {
-  color: var(--text-primary);
   transition: color 0.2s ease;
 }
 
