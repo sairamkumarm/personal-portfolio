@@ -122,7 +122,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </a>
                 </RenderSequence>
                 <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6400}>
-                <a href="mailto:sairamkumar.m@outlook.com">
+                <a href="mailto:sairamkumar.m@outlook.com" 
+                  target="_blank"
+                  rel="noopener noreferrer">
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     CONTACT
                   </GlitchComponent>
@@ -193,7 +195,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                     {/* Contact - Responsive */}
                     <div className="text-xs break-all sm:text-sm text-theme-secondary">
-                    <a href="mailto:sairamkumar.m@outlook.com">
+                    <a href="mailto:sairamkumar.m@outlook.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
                         shouldStart={textPhaseActive}
@@ -208,7 +212,10 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     {/* Links - Responsive Flex */}
                     <div className="flex flex-wrap gap-1 sm:gap-2 pt-2">
                       {data.links.items.map((link, index) => (
-                        <a key={`link-${index}`} href={link.url}>
+                        <a key={`link-${index}`} 
+                        href={link.url} 
+                        target="_blank"
+                        rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
@@ -400,7 +407,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   <div className="text-xs sm:text-sm">
                     <div className="flex gap-1 sm:gap-2 flex-wrap">
                       {project.links.map((link, linkIndex) => (
-                        <a key={`project-${index}-link-${linkIndex}`} href={link.url}>
+                        <a 
+                        key={`project-${index}-link-${linkIndex}`} 
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
                             delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15 + linkIndex + 1)}
