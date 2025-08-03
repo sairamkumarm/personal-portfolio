@@ -264,7 +264,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
               {/* Skills Block - Enhanced Responsive */}
               <div className="space-y-4">
-                <div className="text-base sm:text-lg font-semibold tracking-wider">
+                <div className="text-base sm:text-lg font-medium tracking-wider">
                   <GlitchComponent
                     delay={calculateDelay(data.skills.renderIndex)}
                     shouldStart={textPhaseActive}
@@ -310,7 +310,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
               {/* Education Section - Enhanced Responsive */}
               <div className="space-y-4">
-                <div className="text-base sm:text-lg font-semibold tracking-wider">
+                <div className="text-base sm:text-lg font-medium tracking-wider">
                   <GlitchComponent
                     delay={calculateDelay(data.sections.education.renderIndex)}
                     shouldStart={textPhaseActive}
@@ -380,7 +380,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
         <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
           {/* Projects Section - Enhanced Responsive */}
           <div className="space-y-6">
-            <div className="text-base font-semibold sm:text-lg tracking-wider">
+            <div className="text-base font-medium sm:text-lg tracking-wider">
               <GlitchComponent
                 delay={calculateDelay(data.sections.projects.renderIndex)}
                 shouldStart={textPhaseActive}
@@ -492,7 +492,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
           {/* Experience Section - Enhanced Responsive */}
           <div className="space-y-6">
-            <div className="text-base sm:text-lg font-semibold tracking-wider">
+            <div className="text-base sm:text-lg font-medium tracking-wider">
               <GlitchComponent
                 delay={calculateDelay(data.sections.experience.renderIndex)}
                 shouldStart={textPhaseActive}
