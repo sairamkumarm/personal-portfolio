@@ -14,7 +14,7 @@ interface OperatorProfileProps {
 }
 
 // 🚨 DEBUG MODE - Set to true to disable all animations
-const DEBUG_MODE = true
+const DEBUG_MODE = false
 
 // FIXED: Centralized delay calculation system with stable values
 const SECTION_BASE_DELAY = 300
@@ -152,6 +152,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
             <div className="p-3 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
               {/* Personal Info Block - Enhanced Responsive Design */}
+              
               <div className="space-y-4">
                 {/* Row 1: Info + Photo - Responsive Grid */}
                 <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0 items-start ">
@@ -406,6 +407,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 <AnimatedDivider delay={calculateDelay(data.sections.education.renderIndex)} />
               </div>
             </div>
+                    
           </div>
         </div>
 
@@ -547,55 +549,53 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   >
                     {exp.org}
                   </GlitchComponent>
-                  <div className="grid grid-cols-[70%_30%] lg:grid-cols-2 gap-0 lg:gap-6 items-start">
-                    <div className="text-xs sm:text-sm space-y-1">
-                      <div className="sm:col-span-1 lg:col-span-1 space-y-2 lg:space-y-3">
-                        <div>
-                          <span className="text-theme-primary">
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 1)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-primary"
-                            >
-                              ROLE:{" "}
-                            </GlitchComponent>
-                          </span>
-                          <span className="text-theme-secondary">
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 2)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-secondary"
-                            >
-                              {exp.role}
-                            </GlitchComponent>
-                          </span>
-                        </div>
-                      </div>
-                      <div>
-                        <span className="text-theme-primary">
-                          <GlitchComponent
-                            delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 3)}
-                            shouldStart={textPhaseActive}
-                            debugMode={DEBUG_MODE}
-                            className="text-theme-primary"
-                          >
-                            DURATION:{" "}
-                          </GlitchComponent>
-                        </span>
-                        <span className="text-theme-secondary">
-                          <GlitchComponent
-                            delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 4)}
-                            shouldStart={textPhaseActive}
-                            debugMode={DEBUG_MODE}
-                            className="text-theme-secondary"
-                          >
-                            {exp.duration}
-                          </GlitchComponent>
-                        </span>
-                      </div>
+                </div>
+                <div className="text-xs sm:text-sm space-y-1">
+                  <div className="flex flex-col sm:flex-row sm:gap-4 lg:gap-8">
+                    <div>
+                      <span className="text-theme-primary">
+                        <GlitchComponent
+                          delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 1)}
+                          shouldStart={textPhaseActive}
+                          debugMode={DEBUG_MODE}
+                          className="text-theme-primary"
+                        >
+                          ROLE:{" "}
+                        </GlitchComponent>
+                      </span>
+                      <span className="text-theme-secondary">
+                        <GlitchComponent
+                          delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 2)}
+                          shouldStart={textPhaseActive}
+                          debugMode={DEBUG_MODE}
+                          className="text-theme-secondary"
+                        >
+                          {exp.role}
+                        </GlitchComponent>
+                      </span>
                     </div>
+                  </div>
+                  <div>
+                    <span className="text-theme-primary">
+                      <GlitchComponent
+                        delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 3)}
+                        shouldStart={textPhaseActive}
+                        debugMode={DEBUG_MODE}
+                        className="text-theme-primary"
+                      >
+                        DURATION:{" "}
+                      </GlitchComponent>
+                    </span>
+                    <span className="text-theme-secondary">
+                      <GlitchComponent
+                        delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 4)}
+                        shouldStart={textPhaseActive}
+                        debugMode={DEBUG_MODE}
+                        className="text-theme-secondary"
+                      >
+                        {exp.duration}
+                      </GlitchComponent>
+                    </span>
                   </div>
                 </div>
 
