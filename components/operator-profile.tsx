@@ -258,7 +258,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       />
                     </div>
                     {/* Links - Show only on phones */}
-                    <div className="flex flex-wrap sm:hidden"> 
+                    <div className="flex flex-wrap sm:hidden "> 
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`}
                         href={link.url}
@@ -270,7 +270,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className=" text-xs sm:text-sm"
+                            className=" text-xs sm:text-sm px-0"
                           >
                             {link.label}
                           </GlitchComponent>
