@@ -270,7 +270,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className=" text-xs sm:text-sm px-0"
+                            className=" text-xs sm:text-sm"
                           >
                             {link.label}
                           </GlitchComponent>
