@@ -37,7 +37,7 @@ export function GlitchImage({
   }, [delay, shouldStart, debugMode])
 
   return (
-    <div className={`relative overflow-hidden ${className} ${isVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-300 flex`}>
+    <div className={`relative overflow-hidden ${className} ${isVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-300 flex items-end`}>
       <img
         src={src || "/placeholder.svg"}
         alt={alt}
