@@ -154,7 +154,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               {/* Personal Info Block - Enhanced Responsive Design */}
               <div className="space-y-4 lg:space-y-6">
                 {/* Row 1: Info + Photo - Responsive Grid */}
-                <div className="grid grid-cols-[70%_30%] lg:grid-cols-3 gap-1 lg:gap-6 items-start">
+                <div className="grid grid-cols-[70%_30%] lg:grid-cols-3 gap-0 lg:gap-6 items-start">
                   {/* Col 1: Personal Details - Responsive Typography */}
                   <div className="sm:col-span-1  lg:col-span-2 space-y-2 lg:space-y-3">
                     {/* Name - Responsive Text Sizes */}
@@ -253,7 +253,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE}
-                        className="w-full h-auto object-cover border border-theme-secondary"
+                        className="w-full h-auto object-cover "
                       />
                     </div>
 
