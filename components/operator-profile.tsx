@@ -14,7 +14,7 @@ interface OperatorProfileProps {
 }
 
 // 🚨 DEBUG MODE - Set to true to disable all animations
-const DEBUG_MODE = false
+const DEBUG_MODE = true
 
 // FIXED: Centralized delay calculation system with stable values
 const SECTION_BASE_DELAY = 300
@@ -232,7 +232,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                   {/* Col 2: Photo - Enhanced Responsive Sizing */}
                   <div className="flex justify-center ">
-                    <div className="max-w-[70%] md:max-w-[100%] md:w-full h-auto">
+                    <div className="max-w-[100%] md:w-full h-auto">
                       <GlitchImage
                         src="/images/profile_image_noise.png"
                         alt="Profile"
