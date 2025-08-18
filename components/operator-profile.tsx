@@ -244,7 +244,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
-                  <div className="flex flex-col items-center space-y-2">
+                  <div className="flex flex-col items-center space-y-0.5">
                     {/* Photo */}
                     <div className="max-w-[100%] md:w-full lg:w-full h-auto">
                       <GlitchImage
@@ -262,7 +262,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         <a key={`link-${index}`}
                         href={link.url}
                         target="_blank"
-                        className="inline-flex items-center" 
+                        className="" 
                         rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
