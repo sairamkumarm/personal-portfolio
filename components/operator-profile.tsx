@@ -154,7 +154,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               {/* Personal Info Block - Enhanced Responsive Design */}
               <div className="space-y-4">
                 {/* Row 1: Info + Photo - Responsive Grid */}
-                <div className="grid grid-cols-[70%_30%] md:grid-cols-[60%_40%] lg:grid-cols-[65%_35%] gap-0  items-start">
+                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0  items-start">
                   {/* Col 1: Personal Details - Responsive Typography */}
                   <div className=" space-y-2 ">
                     {/* Name - Responsive Text Sizes */}
