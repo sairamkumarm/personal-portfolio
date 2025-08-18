@@ -101,7 +101,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       {" "}
                       ⁝⁝⁝
                     </b>{" "}
-                    <span>PROFILEsdsd</span>
+                    <span>PROFILE</span>
                   </GlitchComponent>
                 </span>
               </div>
