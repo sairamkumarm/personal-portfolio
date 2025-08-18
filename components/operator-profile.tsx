@@ -154,7 +154,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               {/* Personal Info Block - Enhanced Responsive Design */}
               <div className="space-y-4">
                 {/* Row 1: Info + Photo - Responsive Grid */}
-                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0  ">
+                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0 items-start ">
                   {/* Col 1: Personal Details - Responsive Typography */}
                   <div className=" space-y-2 ">
                     {/* Name - Responsive Text Sizes */}
@@ -244,7 +244,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
-                  <div className="flex flex-col items-center space-y-2">
+                  <div className="flex flex-col items-center space-y-2 max-h-full">
                     {/* Photo */}
                     <div className="max-w-[100%] md:w-full lg:w-full h-full">
                       <GlitchImage
