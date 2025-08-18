@@ -244,7 +244,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
-                  <div className="flex flex-col items-center space-y-2 self-start">
+                  <div className="flex flex-col items-center space-y-2">
                     {/* Photo */}
                     <div className="max-w-[100%] md:w-full lg:w-full ">
                       <GlitchImage
@@ -253,7 +253,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE} 
-                        className=" object-cover "
+                        className=" h-full w-full object-cover "
                       />
                     </div>
                     {/* Links - Show only on phones */}
