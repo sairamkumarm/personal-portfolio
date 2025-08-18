@@ -262,6 +262,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         <a key={`link-${index}`}
                         href={link.url}
                         target="_blank"
+                          className="p-0"
                         rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
