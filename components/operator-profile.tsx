@@ -235,7 +235,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     {/* Photo */}
                     <div className="max-w-[100%] md:w-full lg:w-full h-auto">
                       <GlitchImage
-                        src="/profile.jpg"
+                        src="/images/profile_image_noise.png"
                         alt="Profile"
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
