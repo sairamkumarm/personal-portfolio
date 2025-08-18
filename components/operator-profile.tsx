@@ -244,7 +244,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
-                  <div className="sm:flex sm:flex-col items-center space-y-2">
+                  <div className="sm:flex sm:flex-col sm:items-center sm:space-y-2">
                     {/* Photo */}
                     <div className="max-w-full">
                       <GlitchImage
