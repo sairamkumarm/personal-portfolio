@@ -187,7 +187,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 2)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE}
-                        className="text-theme-secondary"
+                        className="text-theme-muted"
                       >
                         {data.personal_info.location}
                       </GlitchComponent>
