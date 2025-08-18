@@ -182,7 +182,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Location - Responsive */} 
-                    <div className="text-xs sm:text-sm text-theme-secondary">
+                    <div className="text-xs sm:text-sm text-theme-secondary hidden sm:inline">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 2)}
                         shouldStart={textPhaseActive}
