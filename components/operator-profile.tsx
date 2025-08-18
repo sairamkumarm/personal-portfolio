@@ -232,7 +232,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                   {/* Col 2: Photo - Enhanced Responsive Sizing */}
                   <div className="flex justify-center ">
-                    <div className="max-w-[90%] md:w-full h-auto">
+                    <div className="max-w-[100%] md:w-full h-auto">
                       <GlitchImage
                         src="/images/profile_image_noise.png"
                         alt="Profile"
