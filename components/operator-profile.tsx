@@ -210,7 +210,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Links - Responsive Flex */}
-                    <div className="hidden md:inline">
                     <div className="flex flex-wrap gap-1 sm:gap-2 pt-2">
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`} 
@@ -228,7 +227,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           </GlitchComponent>
                         </a>
                       ))}
-                    </div>
                     </div>
                   </div>
 
