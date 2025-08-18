@@ -152,11 +152,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
             <div className="p-3 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
               {/* Personal Info Block - Enhanced Responsive Design */}
-              <div className="space-y-4">
+              <div className="space-y-4 lg:space-y-6">
                 {/* Row 1: Info + Photo - Responsive Grid */}
-                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0  items-start">
+                <div className="grid grid-cols-[70%_30%] lg:grid-cols-3 gap-0 lg:gap-6 items-start">
                   {/* Col 1: Personal Details - Responsive Typography */}
-                  <div className=" space-y-2 ">
+                  <div className="sm:col-span-1  lg:col-span-2 space-y-2 lg:space-y-3">
                     {/* Name - Responsive Text Sizes */}
                     <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider">
                       <GlitchComponent
@@ -181,17 +181,17 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       </GlitchComponent>
                     </div>
 
-                    {/* Location - Responsive */} 
-                    <div className="text-xs sm:text-sm text-theme-secondary"> 
+                    {/* Location - Responsive */}
+                    {/* <div className="text-xs sm:text-sm text-theme-secondary">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 2)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE}
-                        className="text-theme-muted"
+                        className="text-theme-secondary"
                       >
                         {data.personal_info.location}
                       </GlitchComponent>
-                    </div>
+                    </div> */}
 
                     {/* Contact - Responsive */}
                     <div className="text-xs break-all sm:text-sm text-theme-secondary">
@@ -210,12 +210,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Links - Responsive Flex */}
-                    <div className="hidden sm:flex sm:flex-wrap gap-1 sm:gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 pt-2">
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`} 
                         href={link.url} 
                         target="_blank"
-                          className="leading-none"
                         rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
@@ -229,18 +228,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         </a>
                       ))}
                     </div>
-                    <div className="inline-block lg:hidden xl:inline-block">
-                      <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary  sm:pr-4">
-                        <GlitchComponent
-                          delay={calculateDelay(data.bio.renderIndex, 2)}
-                          shouldStart={textPhaseActive}
-                          debugMode={DEBUG_MODE}
-                          className="text-theme-secondary"
-                        >
-                          {data.bio.content}
-                        </GlitchComponent>
-                      </div>
-                    </div>
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
@@ -248,21 +235,21 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     {/* Photo */}
                     <div className="max-w-[100%] md:w-full lg:w-full h-auto">
                       <GlitchImage
-                        src="/images/profile_image_noise.png"
+                        src="/profile.jpg"
                         alt="Profile"
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE}
-                        className="w-full h-auto object-cover "
+                        className="w-full h-auto object-cover border border-theme-secondary"
                       />
                     </div>
+
                     {/* Links - Show only on phones */}
-                    <div className="flex flex-wrap sm:hidden space-y-1"> 
+                    <div className="flex flex-wrap gap-1 sm:gap-2 lg:hidden">
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`}
                         href={link.url}
                         target="_blank"
-                        className="leading-none" 
                         rel="noopener noreferrer">
                           <GlitchComponent
                             bracket
@@ -280,7 +267,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 </div>
 
                 {/* Row 2: Bio - Enhanced Responsive */}
-                <div className="hidden lg:inline-block xl:hidden pt-2 ">
+                <div className="pt-2 lg:pt-4">
                   <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide">
                     <GlitchComponent
                       delay={calculateDelay(data.bio.renderIndex, 2)}
