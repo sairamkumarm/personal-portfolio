@@ -210,7 +210,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Links - Responsive Flex */}
-                    <div className="flex flex-wrap gap-1 sm:gap-2 pt-2">
+                    <div className="hidden md:flex md:flex-wrap gap-1 sm:gap-2 pt-2">
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`} 
                         href={link.url} 
