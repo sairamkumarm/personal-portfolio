@@ -245,7 +245,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Links - Show only on phones */}
-                    <div className="flex flex-wrap gap-1 sm:gap-2 lg:hidden">
+                    <div className="flex flex-wrap gap-1 lg:hidden">
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`}
                         href={link.url}
