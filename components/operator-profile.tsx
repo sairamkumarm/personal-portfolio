@@ -230,6 +230,41 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
                   </div>
 
+                  {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
+                  <div className="flex flex-col items-center space-y-2">
+                    {/* Photo */}
+                    <div className="max-w-[100%] md:w-full lg:w-full h-auto">
+                      <GlitchImage
+                        src="/profile.jpg"
+                        alt="Profile"
+                        delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
+                        shouldStart={textPhaseActive}
+                        debugMode={DEBUG_MODE}
+                        className="w-full h-auto object-cover border border-theme-secondary"
+                      />
+                    </div>
+
+                    {/* Links - Show only on phones */}
+                    <div className="flex flex-wrap gap-1 sm:gap-2 lg:hidden">
+                      {data.links.items.map((link, index) => (
+                        <a key={`link-${index}`}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                          <GlitchComponent
+                            bracket
+                            delay={calculateDelay(data.links.renderIndex, 1, index)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className=" text-xs sm:text-sm"
+                          >
+                            {link.label}
+                          </GlitchComponent>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Row 2: Bio - Enhanced Responsive */}
                 <div className="pt-2 lg:pt-4">
@@ -358,7 +393,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 <AnimatedDivider delay={calculateDelay(data.sections.education.renderIndex)} />
               </div>
             </div>
-                    
           </div>
         </div>
 
@@ -501,64 +535,54 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     {exp.org}
                   </GlitchComponent>
                   <div className="grid grid-cols-[70%_30%] lg:grid-cols-2 gap-0 lg:gap-6 items-start">
-                <div className="text-xs sm:text-sm space-y-1">
-                    <div className="sm:col-span-1 lg:col-span-1 space-y-2 lg:space-y-3">
-                    <div>
-                      <span className="text-theme-primary">
-                        <GlitchComponent
-                          delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 1)}
-                          shouldStart={textPhaseActive}
-                          debugMode={DEBUG_MODE}
-                          className="text-theme-primary"
-                        >
-                          ROLE:{" "}
-                        </GlitchComponent>
-                      </span>
-                      <span className="text-theme-secondary">
-                        <GlitchComponent
-                          delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 2)}
-                          shouldStart={textPhaseActive}
-                          debugMode={DEBUG_MODE}
-                          className="text-theme-secondary"
-                        >
-                          {exp.role}
-                        </GlitchComponent>
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-theme-primary">
-                      <GlitchComponent
-                        delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 3)}
-                        shouldStart={textPhaseActive}
-                        debugMode={DEBUG_MODE}
-                        className="text-theme-primary"
-                      >
-                        DURATION:{" "}
-                      </GlitchComponent>
-                    </span>
-                    <span className="text-theme-secondary">
-                      <GlitchComponent
-                        delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 4)}
-                        shouldStart={textPhaseActive}
-                      {/* Headline - Show on phones and lg+ */}
-                      <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide lg:block">
-                        <GlitchComponent
-                          delay={calculateDelay(data.bio.renderIndex, 2)}
-                          shouldStart={textPhaseActive}
-                          debugMode={DEBUG_MODE}
-                          className="text-theme-secondary"
-                        >
-                          {data.bio.content}
-                        </GlitchComponent>
+                    <div className="text-xs sm:text-sm space-y-1">
+                      <div className="sm:col-span-1 lg:col-span-1 space-y-2 lg:space-y-3">
+                        <div>
+                          <span className="text-theme-primary">
+                            <GlitchComponent
+                              delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 1)}
+                              shouldStart={textPhaseActive}
+                              debugMode={DEBUG_MODE}
+                              className="text-theme-primary"
+                            >
+                              ROLE:{" "}
+                            </GlitchComponent>
+                          </span>
+                          <span className="text-theme-secondary">
+                            <GlitchComponent
+                              delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 2)}
+                              shouldStart={textPhaseActive}
+                              debugMode={DEBUG_MODE}
+                              className="text-theme-secondary"
+                            >
+                              {exp.role}
+                            </GlitchComponent>
+                          </span>
+                        </div>
                       </div>
-
-                      {/* Links - Show only on lg+ */}
-                      <div className="hidden lg:flex flex-wrap gap-1 sm:gap-2 pt-2">
-                      >
-                        {exp.duration}
-                      </GlitchComponent>
-                    </span>
+                      <div>
+                        <span className="text-theme-primary">
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 3)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-primary"
+                          >
+                            DURATION:{" "}
+                          </GlitchComponent>
+                        </span>
+                        <span className="text-theme-secondary">
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.experience.renderIndex, 1, index * 10 + 4)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-secondary"
+                          >
+                            {exp.duration}
+                          </GlitchComponent>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -587,10 +611,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           >
                             •
                           </GlitchComponent>
-                    {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
-                    <div className="flex flex-col items-center space-y-2">
-                      {/* Photo */}
-                      <div className="max-w-[100%] md:w-full lg:w-full h-auto">
+                        </span>
+                        <span>
+                          <GlitchComponent
                             delay={calculateDelay(data.sections.experience.renderIndex, 2, index * 10 + pointIndex)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
@@ -599,26 +622,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             {point}
                           </GlitchComponent>
                         </span>
-                      </div>
-
-                      {/* Links - Show only on phones */}
-                      <div className="flex flex-wrap gap-1 sm:gap-2 lg:hidden">
-                        {data.links.items.map((link, index) => (
-                          <a key={`link-${index}`}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer">
-                            <GlitchComponent
-                              bracket
-                              delay={calculateDelay(data.links.renderIndex, 1, index)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className=" text-xs sm:text-sm"
-                            >
-                              {link.label}
-                            </GlitchComponent>
-                          </a>
-                        ))}
                       </div>
                     ))
                   )}
