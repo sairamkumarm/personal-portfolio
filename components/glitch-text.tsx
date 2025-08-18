@@ -54,7 +54,7 @@ export function GlitchText({
   const renderFinalText = () => {
     if (bracket) {
       return (
-        <span className="bracket-interactive px-0.5">
+        <span className="bracket-interactive px-0">
           <span className="bracket-accent font-extralight">[</span>
           <span className="bracket-content text-theme-secondary">{rawText}</span>
           <span className="bracket-accent font-extralight">]</span>
