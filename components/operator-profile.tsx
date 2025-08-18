@@ -229,7 +229,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         </a>
                       ))}
                     </div>
-                    <div className="inline-block lg:hidden">
+                    <div className="inline-block lg:hidden xl:inline-block">
                       <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary  sm:pr-4">
                         <GlitchComponent
                           delay={calculateDelay(data.bio.renderIndex, 2)}
