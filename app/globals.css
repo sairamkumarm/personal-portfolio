@@ -141,7 +141,6 @@
 
 /* FIXED: Bracket hover effects - works with group hover */
 .bracket-interactive {
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
