@@ -246,7 +246,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
                   <div className="flex flex-col items-center space-y-2">
                     {/* Photo */}
-                    <div className=" ">
+                    <div className="max-w-[100%] md:w-full lg:w-full ">
                       <GlitchImage
                         src="/images/profile_image_noise.png"
                         alt="Profile"
@@ -257,7 +257,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       />
                     </div>
                     {/* Links - Show only on phones */}
-                    <div className="flex flex-wrap sm:hidden space-y-1"> 
+                    <div className="flex flex-wrap sm:hidden space-y-1 items-center"> 
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`}
                         href={link.url}
