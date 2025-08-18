@@ -229,7 +229,6 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         </a>
                       ))}
                     </div>
-                    
                     <div className="inline-block lg:hidden">
                       <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary sm:pr-4">
                         <GlitchComponent
