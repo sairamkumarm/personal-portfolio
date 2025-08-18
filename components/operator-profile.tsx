@@ -158,7 +158,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   {/* Col 1: Personal Details - Responsive Typography */}
                   <div className="sm:col-span-1  lg:col-span-2 space-y-2 lg:space-y-3">
                     {/* Name - Responsive Text Sizes */}
-                    <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider">
+                    <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 0)}
                         shouldStart={textPhaseActive}
@@ -232,9 +232,9 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                   {/* Col 2: Photo - Enhanced Responsive Sizing */}
                   <div className="flex justify-center ">
-                    <div className="max-w-[80%] h-auto">
+                    <div className="max-w-[70%] md:w-full h-auto">
                       <GlitchImage
-                        src="/images/halftone_flattened_white.png"
+                        src="/images/profile_image_noise.png"
                         alt="Profile"
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 0)}
                         shouldStart={textPhaseActive}
