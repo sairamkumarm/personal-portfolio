@@ -154,7 +154,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               {/* Personal Info Block - Enhanced Responsive Design */}
               <div className="space-y-4">
                 {/* Row 1: Info + Photo - Responsive Grid */}
-                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0">
+                <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0  ">
                   {/* Col 1: Personal Details - Responsive Typography */}
                   <div className=" space-y-2 ">
                     {/* Name - Responsive Text Sizes */}
@@ -246,18 +246,18 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
                   <div className="flex flex-col items-center space-y-2">
                     {/* Photo */}
-                    <div className="max-w-[100%] md:w-full lg:w-full ">
+                    <div className="max-w-[100%] md:w-full lg:w-full h-full">
                       <GlitchImage
                         src="/images/profile_image_noise.png"
                         alt="Profile"
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE} 
-                        className=" h-full w-full object-cover "
+                        className="w-full h-auto object-cover "
                       />
                     </div>
                     {/* Links - Show only on phones */}
-                    <div className="flex flex-wrap sm:hidden space-y-1 items-center"> 
+                    <div className="flex flex-wrap sm:hidden space-y-1 sm:space-y-0"> 
                       {data.links.items.map((link, index) => (
                         <a key={`link-${index}`}
                         href={link.url}
