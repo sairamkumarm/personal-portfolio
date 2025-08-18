@@ -253,7 +253,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE} 
-                        className="max-h-[190px] w-auto h-full object-contain "
+                        className="max-h-[190px] w-auto h-auto object-contain "
                       />
                     </div>
                     {/* Links - Show only on phones */}
