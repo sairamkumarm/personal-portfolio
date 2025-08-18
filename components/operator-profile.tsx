@@ -150,7 +150,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               </div>
             </RenderSequence>
 
-            <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
+            <div className="p-3 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
               {/* Personal Info Block - Enhanced Responsive Design */}
               <div className="space-y-4 lg:space-y-6">
                 {/* Row 1: Info + Photo - Responsive Grid */}
@@ -195,17 +195,17 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
                     {/* Contact - Responsive */}
                     <div className="text-xs break-all sm:text-sm text-theme-secondary">
-                    <a href="mailto:sairamkumar.m@outlook.com"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                      <GlitchComponent
-                        delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
-                        shouldStart={textPhaseActive}
-                        debugMode={DEBUG_MODE}
-                        className="text-theme-secondary"
-                      >
-                        {data.personal_info.contact}
-                      </GlitchComponent>
+                      <a href="mailto:sairamkumar.m@outlook.com"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                        <GlitchComponent
+                          delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
+                          shouldStart={textPhaseActive}
+                          debugMode={DEBUG_MODE}
+                          className="text-theme-secondary"
+                        >
+                          {data.personal_info.contact}
+                        </GlitchComponent>
                       </a>
                     </div>
 
