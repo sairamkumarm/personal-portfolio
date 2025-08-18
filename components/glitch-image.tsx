@@ -41,7 +41,7 @@ export function GlitchImage({
       <img
         src={src || "/placeholder.svg"}
         alt={alt}
-        className="w-auto object-contain max-h-[190px]"
+        className="w-auto object-contain max-h-[200px]"
       />
       {shouldGlitchIn && !debugMode && (
         <div className="absolute inset-0 glitch-overlay z-10" />
