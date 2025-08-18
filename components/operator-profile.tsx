@@ -228,6 +228,18 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                         </a>
                       ))}
                     </div>
+                    <div className="inline md:hidden pt-2 lg:pt-4">
+                      <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide">
+                        <GlitchComponent
+                          delay={calculateDelay(data.bio.renderIndex, 2)}
+                          shouldStart={textPhaseActive}
+                          debugMode={DEBUG_MODE}
+                          className="text-theme-secondary"
+                        >
+                          {data.bio.content}
+                        </GlitchComponent>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
@@ -267,7 +279,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 </div>
 
                 {/* Row 2: Bio - Enhanced Responsive */}
-                <div className="pt-2 lg:pt-4">
+                <div className="hidden md:inline pt-2 lg:pt-4">
                   <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide">
                     <GlitchComponent
                       delay={calculateDelay(data.bio.renderIndex, 2)}
