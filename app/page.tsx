@@ -25,7 +25,7 @@ const resumeData: ResumeData = {
     categories: [
       {
         name: "LANGUAGES",
-        skills: ["JAVA", "PYTHON", "TYPESCRIPT", "JAVASCRIPT", "BASH"],
+        skills: ["JAVA", "GO","PYTHON", "BASH"],
       },
       {
         name: "FRAMEWORKS & LIBRARIES",
@@ -97,22 +97,22 @@ const resumeData: ResumeData = {
           ],
         },
         {
-          name: "DISPATCH LOAD BALANCER",
-          headline: "SMART DELIVERY ASSIGNMENT ENGINE",
-          description: [
-            "GREEDY STRATEGY-BASED ENGINE FOR ASSIGNING DELIVERY ORDERS TO VEHICLES BY LOCATION, PRIORITY, AND CAPACITY.",
-            "MODULAR STRATEGY INTERFACE TO ENABLE CUSTOM DISPATCH LOGIC EXTENSIONS.",
-            "HAVERSINE DISTANCE FORMULA USED FOR GEO-AWARE ORDER ALLOCATION.",
-            "INCLUDES OPENAPI-ENDPOINTS AND PLAN METRICS (E.G., AVERAGE DISTANCE, UNASSIGNED ORDERS).",
+          "name": "GOSITEMONITOR",
+          "headline": "CONCURRENT SITE UPTIME & LATENCY MONITOR",
+          "description": [
+            "CONCURRENT GOROUTINE-BASED WORKER POOL TO PING AND MONITOR MULTIPLE URLS IN PARALLEL WITH GLOBAL RATE LIMITING.",
+            "PERIODIC JOB SCHEDULING AND STRUCTURED JSON LOGGING TO CAPTURE LATENCY METRICS, OUTAGES, AND SESSION DATA.",
+            "CENTRALIZED RESULTS PIPELINE FOR AGGREGATION, ANALYSIS, AND OUTAGE PATTERN DETECTION.",
+            "MULTI-CHANNEL ALERTING VIA DISCORD AND EMAIL FOR REAL-TIME NOTIFICATIONS."
           ],
-          role: "ENGINEER",
-          stack: ["JAVA", "SPRING BOOT", "HAVERSINE", "REST API"],
-          links: [
+          "role": "ENGINEER",
+          "stack": ["GO", "GOROUTINES", "CONCURRENCY"],
+          "links": [
             {
-              label: "GITHUB",
-              url: "https://github.com/sairamkumarm/dispatch-load-balancer",
-            },
-          ],
+              "label": "GITHUB",
+              "url": "https://github.com/sairamkumarm/gositemonitor"
+            }
+          ]
         },
       ],
       renderIndex: 5,
