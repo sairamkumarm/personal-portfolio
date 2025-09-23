@@ -329,7 +329,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                               delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10 + skillIndex + 1)}
                               shouldStart={textPhaseActive}
                               debugMode={DEBUG_MODE}
-                              className=" text-xs"
+                              className=" text-xs sm:text-sm"
                             >
                               {skill}
                             </GlitchComponent>
