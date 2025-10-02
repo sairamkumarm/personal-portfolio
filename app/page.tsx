@@ -3,7 +3,7 @@ import { OperatorProfile } from "@/components/operator-profile"
 
 const resumeData: ResumeData = {
   personal_info: {
-    name: "SAIRAMKUMAR M",
+    name: "sairamkumar m",
     location: "BENGALURU, INDIA",
     role: "BACKEND ENGINEER",
     contact: "SAIRAMKUMAR.M@OUTLOOK.COM",
@@ -18,7 +18,7 @@ const resumeData: ResumeData = {
   },
   bio: {
     content:
-      "Building backends that scale; today and tomorrow.",
+      "Designed for failure. Optimized for recovery.",
     renderIndex: 3,
   },
   skills: {

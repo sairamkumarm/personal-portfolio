@@ -150,13 +150,13 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
               </div>
             </RenderSequence>
 
-            <div className="p-3 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
+            <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
               {/* Personal Info Block - Enhanced Responsive Design */}
-              <div className="space-y-4">
+              <div className="space-y-2.5">
                 {/* Row 1: Info + Photo - Responsive Grid */}
                 <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0 items-start ">
                   {/* Col 1: Personal Details - Responsive Typography */}
-                  <div className=" space-y-2 ">
+                  <div className="space-y-2.5">
                     {/* Name - Responsive Text Sizes */}
                     <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider">
                       <GlitchComponent
@@ -230,12 +230,12 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       ))}
                     </div>
                     <div className="inline-block lg:hidden xl:inline-block">
-                      <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary  sm:pr-4">
+                      <div className="text-xs sm:text-sm text-theme-secondary  sm:pr-4">
                         <GlitchComponent
                           delay={calculateDelay(data.bio.renderIndex, 2)}
                           shouldStart={textPhaseActive}
                           debugMode={DEBUG_MODE}
-                          className="text-theme-secondary"
+                          className="text-theme-muted"
                         >
                           {data.bio.content}
                         </GlitchComponent>
@@ -280,13 +280,13 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 </div>
 
                 {/* Row 2: Bio - Enhanced Responsive */}
-                <div className="hidden lg:inline-block xl:hidden pt-2 ">
-                  <div className="text-xs sm:text-sm leading-relaxed text-theme-secondary tracking-wide">
+                <div className="hidden lg:inline-block xl:hidden">
+                  <div className="text-xs sm:text-sm text-theme-secondary tracking-wide">
                     <GlitchComponent
                       delay={calculateDelay(data.bio.renderIndex, 2)}
                       shouldStart={textPhaseActive}
                       debugMode={DEBUG_MODE}
-                      className="text-theme-secondary"
+                      className="text-theme-muted"
                     >
                       {data.bio.content}
                     </GlitchComponent>
