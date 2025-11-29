@@ -2,9 +2,26 @@
 
 import { useEffect, useState } from "react"
 import { useGlitchText } from "@/hooks/use-glitch-text"
+import { ReactNode } from "react";
+import { Children } from "react";
+import { isValidElement } from "react";
+
+const getPlainText = (children: ReactNode): string => {
+  return Children.toArray(children)
+    .map(child => {
+      if (typeof child === 'string' || typeof child === 'number') {
+        return child;
+      }
+      if (isValidElement<{ children?: ReactNode }>(child) && child.props.children) {
+        return getPlainText(child.props.children);
+      }
+      return '';
+    })
+    .join('');
+};
 
 interface GlitchTextProps {
-  children: string
+  children: ReactNode
   delay?: number
   className?: string
   onComplete?: () => void
@@ -22,7 +39,7 @@ export function GlitchText({
   debugMode = false,
   bracket = false,
 }: GlitchTextProps) {
-  const rawText = children
+  const rawText = getPlainText(children)
   const textToGlitch = bracket ? `[ ${rawText} ]` : rawText
   const {
     displayText,

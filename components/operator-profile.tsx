@@ -8,6 +8,8 @@ import { RenderSequence } from "./render-sequence"
 import { AnimatedDivider } from "./animated-divider"
 import { ThemeToggle } from "./theme-toggle"
 import { SectionPoint } from "./section-point"
+import { DecodeTextCycled } from "./decode-text-cycled"
+import { DecodeTextNonCycled } from "./decode-text-non-cycled"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -494,26 +496,24 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                       // Multiple items - render as bullet points
                       project.description.map((point, pointIndex) => (
                         <div key={`project-${index}-desc-${pointIndex}`} className="flex">
-                          <span className="text-theme-primary mr-2 flex-shrink-0">
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15 + pointIndex)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-muted"
-                            >
-                              •
-                            </GlitchComponent>
-                          </span>
-                          <span>
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15 + pointIndex)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-muted"
-                            >
-                              {point}
-                            </GlitchComponent>
-                          </span>
+                        <GlitchComponent
+                         delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15)}
+                         shouldStart={textPhaseActive}
+                         debugMode={DEBUG_MODE}
+                         className="text-theme-muted mr-2"
+                       >
+                        <span> • </span>
+                       </GlitchComponent>
+                       <GlitchComponent
+                         delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15)}
+                         shouldStart={textPhaseActive}
+                         debugMode={DEBUG_MODE}
+                         className="text-theme-muted"
+                       >
+                        <span className="text-theme-primary mr-2 flex-shrink-0">
+                          {point}
+                        </span>
+                        </GlitchComponent>
                         </div>
                       ))
                     )}

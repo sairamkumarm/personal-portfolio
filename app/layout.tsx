@@ -4,8 +4,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Sairamkumar M - Backend Engineer",
-  description: "Backend Engineer specializing in distributed systems and microservice architectures",
-    generator: 'v0.dev'
+  description: "Backend Engineer specializing in distributed systems and microservice architectures"
 }
 
 export default function RootLayout({
@@ -14,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en"  data-lt-installed="true">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

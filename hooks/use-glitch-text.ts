@@ -12,7 +12,7 @@ export function useGlitchText(text: string, startDelay = 0, shouldStart = true) 
   const [isGlitching, setIsGlitching] = useState(false)
   const [hasStarted, setHasStarted] = useState(false)
   const [showInitialFlash, setShowInitialFlash] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout>()
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const hasInitialized = useRef(false)
   const isAnimationComplete = useRef(false)
 
