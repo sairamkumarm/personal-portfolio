@@ -8,6 +8,8 @@ import { RenderSequence } from "./render-sequence"
 import { AnimatedDivider } from "./animated-divider"
 import { ThemeToggle } from "./theme-toggle"
 import { SectionPoint } from "./section-point"
+import { DecodeTextCycled } from "./decode-text-cycled"
+import { DecodeTextNonCycled } from "./decode-text-non-cycled"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -222,7 +224,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className=" text-xs sm:text-sm"
+                            className=" text-xs sm:text-sm "
                           >
                             {link.label}
                           </GlitchComponent>
@@ -269,7 +271,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className=" text-xs sm:text-sm"
+                            className=" text-xs sm:text-sm text-theme-secondary"
                           >
                             {link.label}
                           </GlitchComponent>
@@ -329,7 +331,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                               delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10 + skillIndex + 1)}
                               shouldStart={textPhaseActive}
                               debugMode={DEBUG_MODE}
-                              className=" text-xs sm:text-sm"
+                              className=" text-xs sm:text-sm text-theme-secondary"
                             >
                               {skill}
                             </GlitchComponent>
@@ -469,7 +471,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15 + techIndex + 3)}
                           shouldStart={textPhaseActive}
                           debugMode={DEBUG_MODE}
-                          className=""
+                          className="text-theme-secondary"
                         >
                           {tech}
                         </GlitchComponent>
@@ -493,28 +495,28 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     ) : (
                       // Multiple items - render as bullet points
                       project.description.map((point, pointIndex) => (
-                        <div key={`project-${index}-desc-${pointIndex}`} className="flex">
-                          <span className="text-theme-primary mr-2 flex-shrink-0">
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15 + pointIndex)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-muted"
-                            >
-                              •
-                            </GlitchComponent>
-                          </span>
-                          <span>
-                            <GlitchComponent
-                              delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15 + pointIndex)}
-                              shouldStart={textPhaseActive}
-                              debugMode={DEBUG_MODE}
-                              className="text-theme-muted"
-                            >
-                              {point}
-                            </GlitchComponent>
-                          </span>
-                        </div>
+                        <div key={`exp-${index}-desc-${pointIndex}`} className="flex">
+                        <span className="text-theme-primary mr-2 flex-shrink-0">
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 10 + pointIndex)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-muted"
+                          >
+                            •
+                          </GlitchComponent>
+                        </span>
+                        <span>
+                          <GlitchComponent
+                            delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 10 + pointIndex)}
+                            shouldStart={textPhaseActive}
+                            debugMode={DEBUG_MODE}
+                            className="text-theme-muted"
+                          >
+                            {point}
+                          </GlitchComponent>
+                        </span>
+                      </div>
                       ))
                     )}
                   </div>

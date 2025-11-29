@@ -35,7 +35,6 @@ export interface Project {
   name: string
   headline: string
   description: string[]
-  role: string
   stack: string[]
   links: Link[]
 }
@@ -50,7 +49,6 @@ export interface Experience {
   role: string
   duration: string
   description: string[]
-  stack: string
 }
 
 export interface ExperienceSection {
