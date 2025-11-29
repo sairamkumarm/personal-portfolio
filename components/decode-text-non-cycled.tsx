@@ -17,11 +17,12 @@ const getPlainText = (children: ReactNode): string => {
     .join('')
 }
 
-const CHARS = "!<>-_\/[]{}—=+*^?#________"
+// const CHARS = "!<>-_\/[]{}—=+*^?#________"
+const CHARS = "&*%$#@!ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 // Duration for the gibberish wave to sweep across the text.
-const GIBBERISH_SWEEP_DURATION = 500 
+const GIBBERISH_SWEEP_DURATION = 300 
 // The delay (lag) between the gibberish wave and the reveal wave.
-const REVEAL_LAG_MS = 200 
+const REVEAL_LAG_MS = 500 
 
 interface CharState {
   originalChar: string
@@ -69,7 +70,7 @@ export function DecodeTextNonCycled({
       const timeToBecomeGibberish = (index / plainText.length) * GIBBERISH_SWEEP_DURATION
       return {
         originalChar: char,
-        scrambledChar: CHARS[Math.floor(Math.random() * CHARS.length)],
+        scrambledChar: char!=" "?CHARS[Math.floor(Math.random() * CHARS.length)]:char,
         timeToBecomeGibberish: timeToBecomeGibberish,
         timeToBecomeRevealed: timeToBecomeGibberish + REVEAL_LAG_MS,
       }
