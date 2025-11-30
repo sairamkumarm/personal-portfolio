@@ -4,7 +4,10 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Sairamkumar M - Backend Engineer",
-  description: "Backend Engineer specializing in distributed systems and microservice architectures"
+  description: "Backend Engineer specializing in distributed systems and microservice architectures",
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({

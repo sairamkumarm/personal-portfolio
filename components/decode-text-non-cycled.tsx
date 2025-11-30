@@ -22,7 +22,7 @@ const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 // Duration for the gibberish wave to sweep across the text.
 const GIBBERISH_SWEEP_DURATION = 200 
 // The delay (lag) between the gibberish wave and the reveal wave.
-const REVEAL_LAG_MS = 1400 
+const REVEAL_LAG_MS = 400 
 
 interface CharState {
   originalChar: string
