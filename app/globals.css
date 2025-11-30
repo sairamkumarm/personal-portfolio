@@ -60,7 +60,7 @@
     font-family: "Jozsika", "Space Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo",
       "Consolas", monospace;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    /* letter-spacing: 0.05em; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
@@ -164,6 +164,10 @@
 
 .bracket-interactive:hover .bracket-content {
   color: var(--interactive-text);
+}
+
+.sentence-case::first-letter {
+  text-transform: uppercase !important;
 }
 
 /* TONED DOWN: Subtle Image Glitch - Matches Text Glitch Timing */
