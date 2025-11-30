@@ -10,6 +10,7 @@ import { ThemeToggle } from "./theme-toggle"
 import { SectionPoint } from "./section-point"
 import { DecodeTextCycled } from "./decode-text-cycled"
 import { DecodeTextNonCycled } from "./decode-text-non-cycled"
+import { toSentenceCase } from "@/lib/text-helpers"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -41,7 +42,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
   )
 
   // FIXED: Memoized component selector to prevent re-creation
-  const GlitchComponent = GlitchText
+  const GlitchComponent = DecodeTextNonCycled
 
   // FIXED: Stable phase management
   useEffect(() => {
@@ -94,7 +95,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm py-2 gap-2 sm:gap-4">
               {/* Left side - Title with backdrop blur */}
               <div className="tracking-wider backdrop-blur-md bg-theme-secondary pr-1 w-fit flex gap-1 items-center">
-                <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE} className="uppercase">
                   {data.personal_info.name}
                 </GlitchComponent>
                 <span className="text-theme-secondary">
@@ -158,14 +159,14 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                 {/* Row 1: Info + Photo - Responsive Grid */}
                 <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0 items-start ">
                   {/* Col 1: Personal Details - Responsive Typography */}
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {/* Name - Responsive Text Sizes */}
                     <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider">
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 0)}
                         shouldStart={textPhaseActive}
                         debugMode={DEBUG_MODE}
-                        className="text-theme-primary"
+                        className="text-theme-primary uppercase"
                       >
                         {data.personal_info.name}
                       </GlitchComponent>
@@ -184,7 +185,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Location - Responsive */} 
-                    <div className="text-xs sm:text-sm text-theme-secondary"> 
+                    <div className="text-sm text-theme-secondary"> 
                       <GlitchComponent
                         delay={calculateFieldDelay(data.personal_info.renderIndex, 2)}
                         shouldStart={textPhaseActive}
@@ -196,7 +197,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                     </div>
 
                     {/* Contact - Responsive */}
-                    <div className="text-xs break-all sm:text-sm text-theme-secondary">
+                    <div className="text-sm break-all text-theme-secondary">
                       <a href="mailto:sairamkumar.m@outlook.com"
                       target="_blank"
                       rel="noopener noreferrer">
@@ -204,7 +205,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           delay={calculateFieldDelay(data.personal_info.renderIndex, 3)}
                           shouldStart={textPhaseActive}
                           debugMode={DEBUG_MODE}
-                          className="text-theme-secondary"
+                          className="text-theme-primary lowercase"
                         >
                           {data.personal_info.contact}
                         </GlitchComponent>
@@ -224,7 +225,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                             delay={calculateDelay(data.links.renderIndex, 1, index)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
-                            className=" text-xs sm:text-sm "
+                            className=" text-xs sm:text-sm text-theme-secondary"
                           >
                             {link.label}
                           </GlitchComponent>
@@ -239,7 +240,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
                           debugMode={DEBUG_MODE}
                           className="text-theme-muted"
                         >
-                          {data.bio.content}
+                          {(data.bio.content)}
                         </GlitchComponent>
                       </div>
                     </div>

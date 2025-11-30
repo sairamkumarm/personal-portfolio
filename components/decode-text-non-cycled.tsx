@@ -18,11 +18,11 @@ const getPlainText = (children: ReactNode): string => {
 }
 
 // const CHARS = "!<>-_\/[]{}—=+*^?#________"
-const CHARS = "&*%$#@!ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 // Duration for the gibberish wave to sweep across the text.
-const GIBBERISH_SWEEP_DURATION = 300 
+const GIBBERISH_SWEEP_DURATION = 200 
 // The delay (lag) between the gibberish wave and the reveal wave.
-const REVEAL_LAG_MS = 500 
+const REVEAL_LAG_MS = 400 
 
 interface CharState {
   originalChar: string
