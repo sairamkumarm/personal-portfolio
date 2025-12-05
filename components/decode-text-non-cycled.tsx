@@ -1,7 +1,15 @@
 "use client"
 
-import { useState, useEffect, ReactNode, useRef, Children, isValidElement, cloneElement } from "react"
-
+import {
+  useState,
+  useEffect,
+  ReactNode,
+  useRef,
+  Children,
+  isValidElement,
+  cloneElement,
+  useMemo,
+} from "react"
 // Helper to extract plain text from React nodes for the scramble effect.
 const getPlainText = (children: ReactNode): string => {
   return Children.toArray(children)
@@ -17,18 +25,38 @@ const getPlainText = (children: ReactNode): string => {
     .join('')
 }
 
+
 // const CHARS = "!<>-_\/[]{}—=+*^?#________"
-const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const CHARS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+// const CHARS = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
 // Duration for the gibberish wave to sweep across the text.
-const GIBBERISH_SWEEP_DURATION = 200 
+const GIBBERISH_SWEEP_MS = 400 
 // The delay (lag) between the gibberish wave and the reveal wave.
-const REVEAL_LAG_MS = 400 
+const REVEAL_LAG_MS = 3800 
+
+
+const DEFAULT_IMMUTABLE_CHARS = new Set([
+  " ", ".", ":", ";", ",", "!", "?", "'", '"', "`", "-", "_",
+  "(", ")", "[", "]", "{", "}", "/", "\\",
+  "@", "•", "⫻", "—", "⁝", "›", "&",
+])
+
+const getScrambleChar = (
+  char: string,
+  scramblePool: string,
+  immutableChars: Set<string> = DEFAULT_IMMUTABLE_CHARS
+): string => {
+  if (immutableChars.has(char)) return char
+  return scramblePool[Math.floor(Math.random() * scramblePool.length)]
+}
+
 
 interface CharState {
-  originalChar: string
-  scrambledChar: string
-  timeToBecomeGibberish: number
-  timeToBecomeRevealed: number
+  original: string
+  scrambled: string
+  gibberishAt: number
+  revealAt: number
 }
 
 interface DecodeTextNonCycledProps {
@@ -49,108 +77,114 @@ export function DecodeTextNonCycled({
   bracket = false,
 }: DecodeTextNonCycledProps) {
   const [content, setContent] = useState<ReactNode | null>(null)
+
+  const rafRef = useRef<number | null>(null)
+  const startTimeRef = useRef<number | null>(null)
   const hasCompletedRef = useRef(false)
-  const charStatesRef = useRef<CharState[] | null>(null)
+  const planRef = useRef<CharState[]>([])
   const totalDurationRef = useRef(0)
 
-  const animationFrameRef = useRef<number | null>(null)
-  const startTimeRef = useRef<number | null>(null)
-  const plainText = getPlainText(children)
+  const plainText = useMemo(() => getPlainText(children), [children])
 
-  // Effect 1: Create the detailed animation plan for each character
+  // Build animation plan
   useEffect(() => {
     hasCompletedRef.current = false
-    setContent(null)
     startTimeRef.current = null
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current)
-    }
+    setContent(null)
 
-    const animationPlan: CharState[] = plainText.split('').map((char, index) => {
-      const timeToBecomeGibberish = (index / plainText.length) * GIBBERISH_SWEEP_DURATION
-      return {
-        originalChar: char,
-        scrambledChar: char!=" "?CHARS[Math.floor(Math.random() * CHARS.length)]:char,
-        timeToBecomeGibberish: timeToBecomeGibberish,
-        timeToBecomeRevealed: timeToBecomeGibberish + REVEAL_LAG_MS,
-      }
-    })
-    charStatesRef.current = animationPlan
+    if (rafRef.current) cancelAnimationFrame(rafRef.current)
 
-    // Calculate total duration based on the last character's reveal time
-    totalDurationRef.current = animationPlan.length > 0 ? animationPlan[animationPlan.length - 1].timeToBecomeRevealed : 0;
-
-  }, [plainText])
-
-  // Effect 2: Run the animation based on the pre-built plan
-  useEffect(() => {
-    if (hasCompletedRef.current || !shouldStart) {
-      if (hasCompletedRef.current) setContent(children)
+    if (!plainText.length) {
+      totalDurationRef.current = 0
+      planRef.current = []
       return
     }
 
+    const plan: CharState[] = plainText.split("").map((char, index) => {
+      const gibberishAt = (index / plainText.length) * GIBBERISH_SWEEP_MS
+      const revealAt = gibberishAt + REVEAL_LAG_MS
+
+      return {
+        original: char,
+        scrambled: getScrambleChar(char, CHARS),
+        gibberishAt,
+        revealAt,
+      }
+    })
+
+    planRef.current = plan
+    totalDurationRef.current = plan[plan.length - 1].revealAt
+  }, [plainText])
+
+  // Run animation
+  useEffect(() => {
+    if (!shouldStart) return
+
     if (debugMode) {
+      setContent(children)
       hasCompletedRef.current = true
+      return
+    }
+
+    if (!planRef.current.length) {
       setContent(children)
       return
     }
 
-    const animate = (time: number) => {
-      if (startTimeRef.current === null) {
-        startTimeRef.current = time
-      }
+    const tick = (now: number) => {
+      if (startTimeRef.current === null) startTimeRef.current = now
+      const elapsed = now - startTimeRef.current
 
-      const elapsedTime = time - startTimeRef.current
-      const animationPlan = charStatesRef.current
-      if (!animationPlan) return
+      const plan = planRef.current
+      const duration = totalDurationRef.current
 
-      const totalDuration = totalDurationRef.current
-      const progress = Math.min(elapsedTime / totalDuration, 1)
-
-      if (progress < 1) {
-        let displayText = ""
-        for (const state of animationPlan) {
-          if (elapsedTime >= state.timeToBecomeRevealed) {
-            displayText += state.originalChar
-          } else if (elapsedTime >= state.timeToBecomeGibberish) {
-            displayText += state.scrambledChar
-          } else {
-            // Use a non-breaking space to hold layout before gibberish appears
-            displayText += '\u00A0' 
-          }
-        }
-
-        let animatedContent: ReactNode = displayText
-        if (isValidElement(children)) {
-          animatedContent = cloneElement(children, {}, displayText)
-        }
-
-        setContent(animatedContent)
-        animationFrameRef.current = requestAnimationFrame(animate)
-      } else {
+      if (elapsed >= duration) {
         hasCompletedRef.current = true
         setContent(children)
+        return
       }
+
+      const buffer = new Array(plan.length)
+
+      for (let i = 0; i < plan.length; i++) {
+      const state = plan[i]
+
+      if (elapsed >= state.revealAt) {
+        buffer[i] = state.original
+      } else if (elapsed >= state.gibberishAt) {
+        buffer[i] = state.scrambled
+      } else {
+        buffer[i] = "\u00A0"
+      }
+      }
+
+      const output = buffer.join("")
+
+      let animated: ReactNode = output
+      if (isValidElement(children)) {
+        animated = cloneElement(children, {}, output)
+      }
+
+      setContent(animated)
+      rafRef.current = requestAnimationFrame(tick)
     }
 
-    const startTimeout = setTimeout(() => {
-      animationFrameRef.current = requestAnimationFrame(animate)
+    const timeout = setTimeout(() => {
+      rafRef.current = requestAnimationFrame(tick)
     }, delay)
 
     return () => {
-      clearTimeout(startTimeout)
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
-      }
+      clearTimeout(timeout)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
-  }, [children, shouldStart, delay, debugMode, plainText])
+  }, [children, delay, debugMode, shouldStart])
 
-  const renderWithBrackets = (contentToRender: ReactNode) => {
-    if (!bracket) return contentToRender
+  const renderWithBrackets = (node: ReactNode) => {
+    if (!bracket) return node
     return (
       <span className="bracket-interactive px-0.5">
         <span className="bracket-accent font-extralight">[</span>
-        <span className="bracket-content">{contentToRender}</span>
+        <span className="bracket-content">{node}</span>
         <span className="bracket-accent font-extralight">]</span>
       </span>
     )
