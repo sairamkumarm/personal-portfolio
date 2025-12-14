@@ -1,7 +1,7 @@
 /* Jozsika Font Family */
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikathin.woff2") format("woff2"), url("/fonts/jozsikathin.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikathin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikaextralight.woff2") format("woff2"), url("/fonts/jozsikaextralight.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikaextralight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikalight.woff2") format("woff2"), url("/fonts/jozsikalight.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikalight.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikaregular.woff2") format("woff2"), url("/fonts/jozsikaregular.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikaregular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikamedium.woff2") format("woff2"), url("/fonts/jozsikamedium.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikamedium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikasemibold.woff2") format("woff2"), url("/fonts/jozsikasemibold.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikasemibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -49,7 +49,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikabold.woff2") format("woff2"), url("/fonts/jozsikabold.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikabold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -57,7 +57,7 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikaextrabold.woff2") format("woff2"), url("/fonts/jozsikaextrabold.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikaextrabold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -65,8 +65,171 @@
 
 @font-face {
   font-family: "Jozsika";
-  src: url("/fonts/jozsikaheavy.woff2") format("woff2"), url("/fonts/jozsikaheavy.ttf") format("truetype");
+  src: url("/fonts/jozsika/jozsikaheavy.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Thin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 100;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedThin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 200;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 300;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedLight.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Medium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedMedium.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 600;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedSemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 800;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Heavy.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka SR21 Web';
+	font-display: swap;
+	font-weight: 900;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedHeavy.woff2') format('woff2');
 }

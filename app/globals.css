@@ -57,9 +57,10 @@
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: "Jozsika", "Space Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo",
+    font-family: "Iosevka SR21 Web", "Jozsika", "Space Mono", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro", "Menlo",
       "Consolas", monospace;
     text-transform: uppercase;
+    font-stretch: expanded;
     /* letter-spacing: 0.05em; */
     transition: background-color 0.3s ease, color 0.3s ease;
   }

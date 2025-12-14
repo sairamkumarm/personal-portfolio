@@ -19,6 +19,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         mono: [
+          "Iosevka SR21 Web",
           "Jozsika",
           "Space Mono",
           "SF Mono",
@@ -31,6 +32,7 @@ const config: Config = {
           "monospace",
         ],
         jozsika: ["Jozsika", "monospace"],
+        iosevkaSr21: ["Iosevka SR21 Web", "monospace"],
       },
       colors: {
         background: "hsl(var(--background))",
