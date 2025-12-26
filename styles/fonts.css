@@ -71,165 +71,29 @@
   font-display: swap;
 }
 
-
 @font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 100;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Thin.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 100;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedThin.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 200;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtraLight.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 200;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedExtraLight.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 300;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Light.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 300;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedLight.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
+	font-family: 'Iosevka-SR21-Web-4h6hU';
 	font-display: swap;
 	font-weight: 400;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Regular.woff2') format('woff2');
+	src: url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-Regular.woff2') format('woff2'), url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-Regular.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'Iosevka SR21 Web';
+	font-family: 'Iosevka-SR21-Web-4h6hU';
 	font-display: swap;
-	font-weight: 400;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Extended.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 500;
+	font-weight: 300;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Medium.woff2') format('woff2');
+	src: url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-Light.woff2') format('woff2'), url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-Light.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'Iosevka SR21 Web';
+	font-family: 'Iosevka-SR21-Web-4h6hU';
 	font-display: swap;
-	font-weight: 500;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedMedium.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 600;
+	font-weight: 200;
 	font-stretch: normal;
 	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-SemiBold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 600;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedSemiBold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 700;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Bold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 700;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedBold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 800;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 800;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 900;
-	font-stretch: normal;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-Heavy.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Iosevka SR21 Web';
-	font-display: swap;
-	font-weight: 900;
-	font-stretch: expanded;
-	font-style: normal;
-	src: url('/fonts/IosevkaSr21/WOFF2-Unhinted/IosevkaSr21-ExtendedHeavy.woff2') format('woff2');
+	src: url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-ExtraLight.woff2') format('woff2'), url('/fonts/IosevkaSr21Web_4h6hU/IosevkaSr21Web_4h6hU-ExtraLight.ttf') format('truetype');
 }

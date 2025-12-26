@@ -27,8 +27,8 @@ const getPlainText = (children: ReactNode): string => {
 
 
 // const CHARS = "!<>-_\/[]{}—=+*^?#________"
-// const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-const CHARS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+// const CHARS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 // const CHARS = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
 // Duration for the gibberish wave to sweep across the text.
 const GIBBERISH_SWEEP_MS = 400 
