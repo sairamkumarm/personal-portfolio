@@ -9,7 +9,7 @@ import { ProfileHeader } from "./profile/profile-header"
 import { IdentityPanel } from "./profile/identity-panel"
 import { ProjectsSection } from "./profile/project-section"
 import { ExperienceSection } from "./profile/experience-section"
-import { DecodeTextNonCycled } from "./decode-text-non-cycled"
+import { DecodeTextControlledCycle } from "./decode-text-controlled-cycle"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -40,7 +40,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
     DEBUG_MODE ? "interactive" : "lines",
   )
 
-  const GlitchComponent = DecodeTextNonCycled;
+  const GlitchComponent = DecodeTextControlledCycle;
 
   // FIXED: Stable phase management
   useEffect(() => {
