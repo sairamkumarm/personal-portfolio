@@ -29,25 +29,25 @@
 
   [data-theme="light"] {
     /* Light theme */
-    --bg-primary: #ffffff;
-    --bg-secondary: rgba(255, 255, 255, 0.8);
-    --text-primary: #000000;
-    --text-secondary: #333333;
-    --text-muted: #525252;
-    --text-accent: #737373;
-    --border-primary: #000000;
+    --bg-primary: #efe6d5;
+    --bg-secondary: rgba(239, 230, 213, 0.8);
+    --text-primary: #1e101e;
+    --text-secondary: #150e15;
+    --text-muted: #1f161f;
+    --text-accent: #261626;
+    --border-primary: #1e101e;
     --border-secondary: #999999;
     --interactive-bg: #000000;
-    --interactive-text: #ffffff;
-    --flicker-primary: #000000;
-    --flicker-secondary: rgba(0, 0, 0, 0.3);
-    --glitch-flash-bg: #000000;
-    --glitch-flash-text: #ffffff;
-    --selection-bg: #000000;
-    --selection-text: #ffffff;
-    --scrollbar-track: #ffffff;
-    --scrollbar-thumb: #000000;
-    --scrollbar-thumb-hover: #666666;
+    --interactive-text: #efe6d5;
+    --flicker-primary: #1e101e;
+    --flicker-secondary: rgba(30, 16, 30 0.3);
+    --glitch-flash-bg: #1e101e;
+    --glitch-flash-text: #efe6d5;
+    --selection-bg: #1e101e;
+    --selection-text: #efe6d5;
+    --scrollbar-track: #efe6d5;
+    --scrollbar-thumb: #1e101e;
+    --scrollbar-thumb-hover: #2a142a;
   }
 
   * {
