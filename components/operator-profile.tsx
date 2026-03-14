@@ -11,6 +11,7 @@ import { DecodeTextControlledCycle } from "./decode-text-controlled-cycle"
 import { PersonalInfoSection } from "./profile/personal-info-section"
 import { SkillsSection } from "./profile/skills-section"
 import { EducationSection } from "./profile/education-section"
+import { AnimatedBorder } from "./animated-border"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -80,45 +81,47 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
   return (
     <div
-      className={`min-h-screen bg-theme-primary text-theme-primary font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}>
+      className={`min-h-screen p-1 font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}>
       {/* Debug Mode Indicator */}
       {DEBUG_MODE && <div className="fixed top-2 right-2 z-50 bg-red-600 text-white px-2 py-1 text-sm">DEBUG MODE</div>}
 
       <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
       {/* Main Content - Multi-column Layout */}
-      <div className="pt-16 sm:pt-14 columns-[30rem] gap-x-2 space-y-4 px-0 z-60">
-        <div className=" break-inside-avoid">
+      <div className="pt-20 sm:pt-14 columns-[30rem] pb-4 gap-x-4 space-y-4 px-0 z-60">
+        <div className=" break-inside-avoid bg-theme-primary">
           <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
         </div>
 
-        <div className=" break-inside-avoid">
+        <div className=" break-inside-avoid bg-theme-primary">
           <SkillsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
         
-        <div className=" break-inside-avoid">
+        <div className=" break-inside-avoid bg-theme-primary">
           <EducationSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
         
-        <div className=" break-inside-avoid">
+        <div className=" break-inside-avoid bg-theme-primary">
           <ProjectsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
 
-        <div className=" break-inside-avoid">
+        <div className=" break-inside-avoid bg-theme-primary">
           <ExperienceSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
       </div>
 
       {/* Footer - Enhanced Responsive */}
       <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 4500}>
-        <footer className="p-4 text-center text-xs sm:text-sm tracking-wider">
-          <div className="border-t border-theme-primary border-build" style={{ animationDelay: "0s" }}>
-            <div className="py-4">
-              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>BUILT BY SAIRAMKUMAR M<span className="bracket-accent">]</span></span>
-              <span className="hidden sm:inline"> ⁝⁝⁝ </span>
-              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>NO COOKIES | NO TRACKERS<span className="bracket-accent">]</span></span>
+        <footer className="text-center text-xs sm:text-sm tracking-wider bg-theme-primary">
+          <AnimatedBorder className="p-2">
+            <div className="py-0">
+            <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>BUILT WITH <span className="line-through">SPITE</span> LOVE<span className="bracket-accent">]</span></span>
+            <span className="hidden sm:inline text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}> ⁝⁝⁝ </span>
+              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>© 2026 SAIRAMKUMAR M<span className="bracket-accent">]</span></span>
+              <span className="hidden sm:inline text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}> ⁝⁝⁝ </span>
+              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span><span className="line-through">PRECISION</span> OCD ENGINEERED<span className="bracket-accent">]</span></span>
             </div>
-          </div>
+          </AnimatedBorder>
         </footer>
       </RenderSequence>
     </div>

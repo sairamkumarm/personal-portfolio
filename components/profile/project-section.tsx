@@ -17,18 +17,26 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
 
     return (
         <AnimatedBorder header="PROJECTS" delay={calculateDelay(data.sections.projects.renderIndex)} >
-            <div className="space-y-6">
+            <div className="space-y-4 pt-2">
                 {data.sections.projects.items.map((project, index) => (
-                    <div key={`project-${index}`} className="space-y-4">
+                    <AnimatedBorder 
+                    key={`project-${index}`} 
+                    header={project.name} 
+                    delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15)} 
+                    GlitchComponent={GlitchComponent} 
+                    headerClassName='text-xs sm:text-sm text-theme-primary'
+                    borderClassName='border-theme-tertiary'
+                    >
+                    <div key={`project-${index}`} className="space-y-2">
                         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 lg:gap-4">
                             <div className="text-xs sm:text-sm tracking-wider flex-1">
                                 <GlitchComponent
                                     delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15)}
                                     shouldStart={textPhaseActive}
                                     debugMode={DEBUG_MODE}
-                                    className="text-theme-primary"
-                                >
-                                    {project.name} — {project.headline}
+                                    className="text-theme-secondary"
+                                    >
+                                    {project.headline}
                                 </GlitchComponent>
                             </div>
                             <div className="text-xs sm:text-sm">
@@ -44,8 +52,8 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                                                 delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15 + linkIndex + 1)}
                                                 shouldStart={textPhaseActive}
                                                 debugMode={DEBUG_MODE}
-                                                className=""
-                                            >
+                                                className="text-theme-secondary"
+                                                >
                                                 {link.label}
                                             </GlitchComponent>
                                         </a>
@@ -76,11 +84,11 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                                 {project.description.length === 1 ? (
                                     // Single item - render as paragraph
                                     <GlitchComponent
-                                        delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15)}
+                                    delay={calculateDelay(data.sections.projects.renderIndex, 2, index * 15)}
                                         shouldStart={textPhaseActive}
                                         debugMode={DEBUG_MODE}
                                         className="text-theme-muted"
-                                    >
+                                        >
                                         {project.description[0]}
                                     </GlitchComponent>
                                 ) : (
@@ -103,7 +111,7 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                                                 shouldStart={textPhaseActive}
                                                 debugMode={DEBUG_MODE}
                                                 className="text-theme-muted"
-                                            >
+                                                >
                                                 {point}
                                             </GlitchComponent>
                                         </span>
@@ -113,6 +121,7 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                             </div>
                         </div>
                     </div>
+                    </AnimatedBorder>
                 ))}
             </div>
         </AnimatedBorder>

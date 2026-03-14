@@ -13,7 +13,8 @@
     --text-muted: #a1a1aa;
     --text-accent: #71717a;
     --border-primary: #ffffff;
-    --border-secondary: #666666;
+    --border-secondary: #ffffff85;
+    --border-tertiary: #ffffff5a;
     --interactive-bg: #ffffff;
     --interactive-text: #000000;
     --flicker-primary: #ffffff;
@@ -34,9 +35,10 @@
     --text-primary: #1e101e;
     --text-secondary: #150e15;
     --text-muted: #1f161f;
-    --text-accent: #261626;
+    --text-accent: #2e1f2e;
     --border-primary: #1e101e;
-    --border-secondary: #999999;
+    --border-secondary: #1e101eaa;
+    --border-tertiary: #1e101e7a;
     --interactive-bg: #000000;
     --interactive-text: #efe6d5;
     --flicker-primary: #1e101e;
@@ -65,7 +67,6 @@
     text-transform: uppercase;
     /* font-stretch: expanded; */
     /* letter-spacing: 0em; */
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -124,6 +125,10 @@
 
 .border-theme-secondary {
   border-color: var(--border-secondary);
+}
+
+.border-theme-tertiary {
+  border-color: var(--border-tertiary);
 }
 
 /* CLEANED UP: Interactive elements - removed conflicting logic */

@@ -5,6 +5,7 @@ import type React from 'react';
 import { RenderSequence } from "../render-sequence";
 import { ThemeToggle } from "../theme-toggle";
 import { ResumeData } from "@/types/resume";
+import { AnimatedBorder } from '../animated-border';
 
 interface ProfileHeaderProps {
     data: ResumeData;
@@ -18,24 +19,22 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
 
     return (
         <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 0}>
-        <nav className="fixed top-0 left-0 right-0 z-[9999] bg-theme-primary px-0 py-0">
-          <div
-            className="border-t border-b border-theme-primary border-build"
-            style={{ animationDelay: DEBUG_MODE ? "0s" : "0.2s" }}
-          >
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm py-2 gap-2 sm:gap-4">
+        <nav className="fixed top-1 left-1 right-1 z-[9999] bg-theme-primary px-0 py-0">
+          <AnimatedBorder className='p-2' borderClassName='border-theme-primary'>
+          <div>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm py-0 gap-2 sm:gap-4">
               {/* Left side - Title with backdrop blur */}
               <div className="tracking-wider backdrop-blur-md bg-theme-secondary pr-1 w-fit flex gap-1 items-center">
                 <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE} className="uppercase">
                   {data.personal_info.name}
                 </GlitchComponent>
-                <span className="text-theme-secondary">
+                <span >
                   <GlitchComponent delay={0} className="" shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
-                    <b className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
-                      {" "}
+                    {" "}
+                    <span className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       ⁝⁝⁝
-                    </b>{" "}
-                    <span>PROFILE</span>
+                    </span>{" "}
+                    <span className="text-theme-secondary">PROFILE</span>
                   </GlitchComponent>
                 </span>
               </div>
@@ -70,6 +69,8 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
               </div>
             </div>
           </div>
+          </AnimatedBorder>
+
         </nav>
       </RenderSequence>
     )

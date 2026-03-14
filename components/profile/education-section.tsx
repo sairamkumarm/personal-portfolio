@@ -15,8 +15,8 @@ interface EducationSectionProps {
 
 export function EducationSection({ data, textPhaseActive, DEBUG_MODE, calculateDelay, GlitchComponent }: EducationSectionProps) {
     return (
-        <AnimatedBorder header="EDUCATION" delay={calculateDelay(data.sections.education.renderIndex)}>
-            <div className="space-y-4">
+        <AnimatedBorder header="EDUCATION" delay={calculateDelay(data.sections.education.renderIndex)} >
+            <div className="space-y-4 ">
                 {data.sections.education.items.map((edu, index) => (
                     <div key={`edu-${index}`} className="space-y-2">
                         <div className="text-xs sm:text-sm space-y-1">
