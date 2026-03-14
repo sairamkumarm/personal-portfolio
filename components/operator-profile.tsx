@@ -87,7 +87,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
       <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
       {/* Main Content - Multi-column Layout */}
-      <div className="pt-16 sm:pt-14 columns-[30rem] gap-x-2 space-y-0 px-0">
+      <div className="pt-16 sm:pt-14 columns-[30rem] gap-x-2 space-y-4 px-0 z-60">
         <div className=" break-inside-avoid">
           <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
         </div>
