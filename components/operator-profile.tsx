@@ -4,12 +4,13 @@
 import { useState, useEffect, useMemo } from "react"
 import type { ResumeData } from "@/types/resume"
 import { RenderSequence } from "./render-sequence"
-import { toSentenceCase } from "@/lib/text-helpers"
 import { ProfileHeader } from "./profile/profile-header"
-import { IdentityPanel } from "./profile/identity-panel"
 import { ProjectsSection } from "./profile/project-section"
 import { ExperienceSection } from "./profile/experience-section"
 import { DecodeTextControlledCycle } from "./decode-text-controlled-cycle"
+import { PersonalInfoSection } from "./profile/personal-info-section"
+import { SkillsSection } from "./profile/skills-section"
+import { EducationSection } from "./profile/education-section"
 
 interface OperatorProfileProps {
   data: ResumeData
@@ -85,23 +86,25 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
       <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
-      {/* Main Content - Enhanced Responsive Grid */}
-      <div className="pt-16 sm:pt-20 lg:pt-16 grid grid-cols-1 lg:grid-cols-2 min-h-screen z-0">
-        {/* Left Pane - Identity Panel */}
-        <div className="">
-          <div className="relative">
-            <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 400}>
-              <div className="absolute right-0 top-0 w-px h-full hidden lg:block">
-                <div className="border-r border-theme-secondary border-build"></div>
-              </div>
-            </RenderSequence>
-            <IdentityPanel data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
-          </div>
+      {/* Main Content - Multi-column Layout */}
+      <div className="pt-16 sm:pt-14 columns-[30rem] gap-x-2 space-y-0 px-0">
+        <div className=" break-inside-avoid">
+          <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
         </div>
 
-        {/* Right Pane - Projects & Dynamic Content - Enhanced Responsive */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
+        <div className=" break-inside-avoid">
+          <SkillsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+        </div>
+        
+        <div className=" break-inside-avoid">
+          <EducationSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+        </div>
+        
+        <div className=" break-inside-avoid">
           <ProjectsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+        </div>
+
+        <div className=" break-inside-avoid">
           <ExperienceSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
       </div>

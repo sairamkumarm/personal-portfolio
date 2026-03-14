@@ -4,10 +4,9 @@
 import type React from 'react';
 import { GlitchImage } from "../glitch-image";
 import { AnimatedDivider } from "../animated-divider";
-import { SectionPoint } from "../section-point";
 import { ResumeData } from "@/types/resume";
 
-interface IdentityPanelProps {
+interface PersonalInfoProps {
     data: ResumeData;
     textPhaseActive: boolean;
     DEBUG_MODE: boolean;
@@ -16,11 +15,9 @@ interface IdentityPanelProps {
     GlitchComponent: React.ElementType;
 }
 
-export function IdentityPanel({ data, textPhaseActive, DEBUG_MODE, calculateDelay, calculateFieldDelay, GlitchComponent }: IdentityPanelProps) {
+export function PersonalInfoSection({ data, textPhaseActive, DEBUG_MODE, calculateDelay, calculateFieldDelay, GlitchComponent }: PersonalInfoProps) {
 
     return (
-        <div className="p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8 z-0">
-        {/* Personal Info Block - Enhanced Responsive Design */}
         <div className="space-y-2.5">
           {/* Row 1: Info + Photo - Responsive Grid */}
           <div className="grid grid-cols-[70%_30%]  lg:grid-cols-[65%_35%] gap-0 items-start ">
@@ -164,116 +161,5 @@ export function IdentityPanel({ data, textPhaseActive, DEBUG_MODE, calculateDela
 
           <AnimatedDivider delay={calculateDelay(data.personal_info.renderIndex, 2)} />
         </div>
-
-        {/* Skills Block - Enhanced Responsive */}
-        <div className="space-y-4">
-          <div className="text-base sm:text-lg font-medium tracking-wider">
-            <GlitchComponent
-              delay={calculateDelay(data.skills.renderIndex)}
-              shouldStart={textPhaseActive}
-              debugMode={DEBUG_MODE}
-              className="text-theme-primary"
-            >
-              <SectionPoint /> STACK
-            </GlitchComponent>
-          </div>
-          <div className="space-y-3 text-xs sm:text-sm">
-            {data.skills.categories.map((category, categoryIndex) => (
-              <div key={`category-${categoryIndex}`} className="space-y-1 lg:space-y-2">
-                <div className="text-theme-primary">
-                  <GlitchComponent
-                    delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10)}
-                    shouldStart={textPhaseActive}
-                    debugMode={DEBUG_MODE}
-                    className=""
-                  >
-                    {"›"} {category.name}
-                  </GlitchComponent>
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span key={`skill-${categoryIndex}-${skillIndex}`}>
-                      <GlitchComponent
-                        bracket
-                        delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10 + skillIndex + 1)}
-                        shouldStart={textPhaseActive}
-                        debugMode={DEBUG_MODE}
-                        className=" text-xs sm:text-sm text-theme-secondary"
-                      >
-                        {skill}
-                      </GlitchComponent>
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <AnimatedDivider delay={calculateDelay(data.skills.renderIndex, 2)} />
-        </div>
-
-        {/* Education Section - Enhanced Responsive */}
-        <div className="space-y-4">
-          <div className="text-base sm:text-lg font-medium tracking-wider">
-            <GlitchComponent
-              delay={calculateDelay(data.sections.education.renderIndex)}
-              shouldStart={textPhaseActive}
-              debugMode={DEBUG_MODE}
-              className="text-theme-primary"
-            >
-              <SectionPoint /> EDUCATION
-            </GlitchComponent>
-          </div>
-
-          {data.sections.education.items.map((edu, index) => (
-            <div key={`edu-${index}`} className="space-y-2">
-              <div className="text-xs sm:text-sm space-y-1">
-                <div>
-                  <span className="text-theme-primary">
-                    <GlitchComponent
-                      delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2)}
-                      shouldStart={textPhaseActive}
-                      debugMode={DEBUG_MODE}
-                      className="text-theme-primary"
-                    >
-                      {edu.degree}
-                    </GlitchComponent>
-                  </span>
-                </div>
-                <div>
-                  <span className="text-theme-secondary font-light">
-                    <GlitchComponent
-                      delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
-                      shouldStart={textPhaseActive}
-                      debugMode={DEBUG_MODE}
-                      className="text-theme-secondary"
-                    >
-                      {edu.institution}
-                    </GlitchComponent>
-                  </span>
-                  <span className="text-theme-secondary font-light flex justify-between 1">
-                    <GlitchComponent
-                      delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
-                      shouldStart={textPhaseActive}
-                      debugMode={DEBUG_MODE}
-                      className="text-theme-secondary"
-                    >
-                      {"GRADE: "} {edu.grade}
-                    </GlitchComponent>
-                    <GlitchComponent
-                      delay={calculateDelay(data.sections.education.renderIndex, 1, index * 2 + 1)}
-                      shouldStart={textPhaseActive}
-                      debugMode={DEBUG_MODE}
-                      className="text-theme-secondary"
-                    >
-                      {edu.duration}
-                    </GlitchComponent>
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
-          <AnimatedDivider delay={calculateDelay(data.sections.education.renderIndex)} />
-        </div>
-      </div>
     )
 }

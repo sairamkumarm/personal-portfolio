@@ -18,7 +18,7 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
 
     return (
         <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 0}>
-        <nav className="fixed top-0 left-0 right-0 z-[9999] bg-theme-primary px-3 sm:px-4 lg:px-6 py-2">
+        <nav className="fixed top-0 left-0 right-0 z-[9999] bg-theme-primary px-0 py-0">
           <div
             className="border-t border-b border-theme-primary border-build"
             style={{ animationDelay: DEBUG_MODE ? "0s" : "0.2s" }}
