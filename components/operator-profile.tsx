@@ -81,20 +81,23 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
   return (
     <div
-      className={`min-h-screen p-1 font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}>
+      className={`min-h-screen flex flex-col p-1 font-mono ${interactivePhaseActive ? "interactive-phase" : "non-interactive-phase"}`}>
       {/* Debug Mode Indicator */}
       {DEBUG_MODE && <div className="fixed top-2 right-2 z-50 bg-red-600 text-white px-2 py-1 text-sm">DEBUG MODE</div>}
 
       <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
       {/* Main Content - Multi-column Layout */}
-      <div className="pt-20 sm:pt-14 columns-[30rem] pb-4 gap-x-4 space-y-4 px-0 z-60">
+      <div className=" xl:hidden flex-grow pt-20 sm:pt-14 columns-[30rem] pb-4 gap-x-4 space-y-4 px-0 z-60">
         <div className=" break-inside-avoid bg-theme-primary">
           <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
         </div>
 
         <div className=" break-inside-avoid bg-theme-primary">
           <SkillsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+        </div>
+        <div className=" break-inside-avoid bg-theme-primary">
+          <ExperienceSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
         
         <div className=" break-inside-avoid bg-theme-primary">
@@ -105,10 +108,33 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
           <ProjectsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
 
-        <div className=" break-inside-avoid bg-theme-primary">
-          <ExperienceSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+      </div>
+
+      <div className="hidden xl:flex items-center flex-grow pt-20 sm:pt-14 pb-4 z-60 ">
+        <div className="grid grid-cols-3 gap-4 2xl:max-w-[90rem] mx-auto">
+            {/* Left Column */}
+            <div className="space-y-4">
+                <SkillsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+            </div>
+
+            {/* Center Column */}
+            <div className="space-y-4">
+                <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
+                <EducationSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-4">
+                <ExperienceSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+            </div>
+
+            {/* Bottom Row */}
+            <div className="col-span-3 space-y-4">
+                <ProjectsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
+            </div>
         </div>
       </div>
+
 
       {/* Footer - Enhanced Responsive */}
       <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 4500}>
