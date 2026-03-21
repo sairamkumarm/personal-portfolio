@@ -12,7 +12,7 @@ import {
   cloneElement,
 } from "react"
 
-const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ                 "
+const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ                                                   "
 
 const GIBBERISH_SWEEP_MS = 400
 const REVEAL_LAG_MS = 1600
