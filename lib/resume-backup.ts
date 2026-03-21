@@ -1,109 +1,94 @@
 import type { ResumeData } from "@/types/resume"
 
 export const resumeData: ResumeData = {
-  personal_info: {
-    name: "sairamkumar m",
-    location: "bengaluru, india",
-    role: "backend engineer",
-    contact: "sairamkumar.m@outlook.com",
-    renderIndex: 1,
+  "personal_info": {
+    "name": "Sairamkumar M",
+    "location": "Bengaluru, KA, India",
+    "role": "Backend Engineering",
+    "contact": "sairamkumar.m@outlook.com",
+    "renderIndex": 1
   },
-  links: {
-    items: [
-      { label: "linkedin", url: "https://www.linkedin.com/in/sairamkumarm" },
-      { label: "github", url: "https://github.com/sairamkumarm" },
+  "links": {
+    "items": [
+      { "label": "linkedin", "url": "https://www.linkedin.com/in/sairamkumarm" },
+      { "label": "github", "url": "https://github.com/sairamkumarm" }
     ],
-    renderIndex: 2,
+    "renderIndex": 2
   },
-  bio: {
-    content:
-      "designed for failure. optimized for recovery.",
-    renderIndex: 3,
+  "bio": {
+    "content": "Design for failure, optimize for recovery.",
+    "renderIndex": 3
   },
-  skills: {
-    categories: [
+  "skills": {
+    "categories": [
       {
-        name: "languages",
-        skills: ["java", "go","python", "bash"],
+        "name": "Languages",
+        "skills": ["Java", "Go", "Python", "Bash"]
       },
       {
-        name: "frameworks & libraries",
-        skills: [
-          "spring boot",
-          "spring cloud",
-          "spring security",
-          "resilience4j",
-          "openfeign",
-          "eureka",
-        ],
+        "name": "Frameworks, APIs, & Libs",
+        "skills": ["Spring Boot", "Gin", "REST", "GraphQL", "Junit", "Mockito"]
       },
       {
-        name: "tools & platforms",
-        skills: [
-          "docker",
-          "redis",
-          "kafka",
-          "postgresql",
-          "mongodb",
-          "elasticsearch",
-          "git",
-          "junit",
-          "mockito",
-          "insomnia",
-        ],
+        "name": "Databases & Infrastructure",
+        "skills": [
+          "PostgreSQL",
+          "MongoDB",
+          "Elasticsearch",
+          "Redis",
+          "Kafka",
+          "Docker",
+          "GCP"
+        ]
       },
       {
-        name: "concepts",
-        skills: [
-          "data structures & algorithms",
-          "oop",
-          "aop",
-          "microservices",
-          "event-driven architecture",
-          "rest apis",
-        ],
-      },
+        "name": "concepts",
+        "skills": [
+          "OOP",
+          "Concurrency",
+          "Microservices"
+        ]
+      }
     ],
-    renderIndex: 4,
+    "renderIndex": 4
   },
-  sections: {
-    projects: {
-      items: [
+  "sections": {
+    "projects": {
+      "items": [
         {
-          name: "accessguard",
-          headline: "multi-tenant authentication & authorization platform",
-          description: [
-            "distributed microservices system with eureka service discovery and kafka-powered communication.",
-            "implemented rs256 jwt per-tenant key management and jwks endpoint for key rotation.",
-            "streamed login events via kafka with aop-based tracking and alerting.",
-            "used resilience4j and redis token buckets for rate limiting and circuit breaking.",
+          "name": "Accessguard",
+          "headline": "Multi-tenant Authentication & Authorization Platform",
+          "description": [
+            "Distributed microservices with eureka service discovery and kafka pub/sub communication.",
+            "Implemented rs256 jwt per-tenant key management and a jwks endpoint for key discovery.",
+            "Integrated redis-backed token bucket filter for gateway rate limiting.",
+            "Utilized resilience4j for circuit breaking and fallback behaviour."
           ],
-          stack: [
-            "spring boot",
-            "kafka",
-            "postgresql",
-            "redis",
-            "docker",
-            "resilience4j",
-            "elasticsearch",
+          "stack": [
+            "Spring Boot",
+            "Kafka",
+            "PostgreSQL",
+            "Redis",
+            "Resilience4j",
+            "Elasticsearch"
           ],
-          links: [
+          "links": [
             {
-              label: "github",
-              url: "https://github.com/sairamkumarm/accessguard",
-            },
-          ],
+              "label": "github",
+              "url": "https://github.com/sairamkumarm/accessguard"
+            }
+          ]
         },
         {
-          "name": "gositemonitor",
-          "headline": "concurrent site uptime & latency monitor",
+          "name": "GoSiteMonitor",
+          "headline": "Concurrent Site Uptime & Latency Monitor",
           "description": [
-            "concurrent goroutine-based worker pool to ping and monitor multiple urls in parallel with global rate limiting.",
-            "periodic job scheduling and structured json logging to capture latency metrics, outages, and session data.",
-            "centralized results pipeline for aggregation, analysis, and outage pattern detection.",
-            "multi-channel alerting via discord and email for real-time notifications."
+            "Goroutine worker pool to monitor multiple urls concurrently with global token-based rate limiting.",
+            "Periodic job scheduling and structured json logging for latency, outage, and session data.",
+            "Aggregation pipeline to detect recurring outage patterns and generate insights.",
+            "Multi-channel alerting through discord and email for real-time notifications."
           ],
-          "stack": ["go", "goroutines", "concurrency"],
+          "stack": ["Go", "Goroutines", "Concurrency", "Docker"],
           "links": [
             {
               "label": "github",
@@ -111,36 +96,58 @@ export const resumeData: ResumeData = {
             }
           ]
         },
-      ],
-      renderIndex: 5,
-    },
-    experience: {
-      items: [
         {
-          org: "wibblit (resumetweaker)",
-          role: "co-founder & developer",
-          duration: "sep 2024 - jun 2025",
-          description: [
-            "shipped an ai-powered resume and job-matching platform, managing product development end-to-end under early-stage startup constraints.",
-            "engineered a microservice integrated with gmail pub/sub to ingest user emails, detect job updates, and update a per-user job tracker in real time.",
-            "implemented client-side pdf parsing and json extraction for resume ingestion, enabling consistent, structured data flow from any pdf.",
-            "designed prompt flows to tailor resumes to job descriptions through keyword mapping and tone-shifting, while generating dynamic interview questions.",
-            "balanced system design with fast iteration on activation, positioning, and feature delivery, shipping a working mvp to early testers."
+          "name": "ANSRS",
+          "headline": "Command Line Spaced Repetition System",
+          "description": [
+            "Recall engine based on difficulty, recall count, and spaced repetition intervals.",
+            "Implemented caching and embedded h2 database for persistence and archival.",
+            "Fully test-driven development workflow using junit and mockito."
           ],
-        },
+          "stack": ["Java", "Maven", "h2", "Junit", "Mockito"],
+          "links": [
+            {
+              "label": "github",
+              "url": "https://github.com/sairamkumarm/ansrs"
+            }
+          ]
+        }
       ],
-      renderIndex: 6,
+      "renderIndex": 5
     },
-    education: {
-      items: [
+    "experience": {
+      "items": [
         {
-          degree: "b.e. computer science",
-          institution: "visvesvaraya technological university",
-          duration: "dec 2021 - jun 2025",
-          grade: "9.24"
+          "org": "Calix",
+          "role": "Graduate Engineering Trainee",
+          "duration": "Mar 2026 - Present",
+          "description": ["loading..."]
         },
+        {
+          "org": "Wibblit (resumetweaker)",
+          "role": "Co-founder & Developer",
+          "duration": "Sep 2024 - Jun 2025",
+          "description": [
+            "Shipped an ai-powered resume to job-matching platform, managing product development end-to-end.",
+            "Built a gmail pub/sub integrated microservice to ingest emails, detect job updates, and update per-user job trackers in real time.",
+            "Implemented client-side pdf parsing and json extraction for consistent resume ingestion.",
+            "Balanced system design with rapid iteration and delivered a working mvp to early testers."
+          ]
+        }
       ],
-      renderIndex: 7,
+      "renderIndex": 6
     },
-  },
+    "education": {
+      "items": [
+        {
+          "degree": "B.E. Computer Science",
+          "institution": "Visvesvaraya Technological University",
+          "duration": "Dec 2021 - Aug 2025",
+          "grade": "9.24"
+        }
+      ],
+      "renderIndex": 7
+    }
+  }
 }
+

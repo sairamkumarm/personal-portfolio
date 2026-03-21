@@ -17,7 +17,7 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
 
     return (
         <AnimatedBorder header="PROJECTS" delay={calculateDelay(data.sections.projects.renderIndex)} >
-            <div className="flex flex-col xl:flex-row gap-4 pt-2">
+            <div className="flex flex-col gap-4 pt-2">
                 {data.sections.projects.items.map((project, index) => (
                     <AnimatedBorder 
                     key={`project-${index}`} 
