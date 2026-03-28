@@ -12,12 +12,12 @@ import {
   cloneElement,
 } from "react"
 
-const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ                                                   "
+const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ                                  "
 
-const GIBBERISH_SWEEP_MS = 400
-const REVEAL_LAG_MS = 1600
+const GIBBERISH_SWEEP_MS = 600
+const REVEAL_LAG_MS = 1000
 
-const CYCLE_INTERVAL = 1000
+const CYCLE_INTERVAL = 400
 const CYCLE_DELTA = 100
 
 const DEFAULT_IMMUTABLE_CHARS = new Set([
