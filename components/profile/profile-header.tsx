@@ -29,12 +29,14 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                   {data.personal_info.name}
                 </GlitchComponent>
                 <span >
-                  <GlitchComponent delay={0} className="" shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                  <GlitchComponent delay={0} debugMode={true} className="" shouldStart={textPhaseActive}>
                     {" "}
                     <span className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       ⁝⁝⁝
                     </span>{" "}
+                  <GlitchComponent delay={0} debugMode={DEBUG_MODE} className="" shouldStart={textPhaseActive}>
                     <span className="text-theme-secondary">PROFILE</span>
+                  </GlitchComponent>
                   </GlitchComponent>
                 </span>
               </div>
