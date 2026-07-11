@@ -14,10 +14,10 @@ import {
 
 const CHARS = "&%$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ                                  "
 
-const GIBBERISH_SWEEP_MS = 600
-const REVEAL_LAG_MS = 1000
+const GIBBERISH_SWEEP_MS = 300
+const REVEAL_LAG_MS = 800
 
-const CYCLE_INTERVAL = 400
+const CYCLE_INTERVAL = 600
 const CYCLE_DELTA = 100
 
 const DEFAULT_IMMUTABLE_CHARS = new Set([
@@ -84,7 +84,7 @@ export function DecodeTextControlledCycle({
   const hasCompletedRef = useRef(false)
   const rafRef = useRef<number | null>(null)
   const startTimeRef = useRef<number | null>(null)
-  
+
   const planRef = useRef<CharState[]>([])
   const totalDurationRef = useRef(0)
   const bufferRef = useRef<string[]>([]);
@@ -122,7 +122,7 @@ export function DecodeTextControlledCycle({
     planRef.current = plan
     bufferRef.current = new Array(plan.length).fill("\u00A0")
     totalDurationRef.current = plan[plan.length - 1].revealAt
-    
+
   }, [plainText, cycleInterval])
 
   const tick = useCallback((now: number) => {
@@ -150,22 +150,22 @@ export function DecodeTextControlledCycle({
         buffer[i] = state.original
       } else if (elapsed >= state.gibberishAt) {
         if (DEFAULT_IMMUTABLE_CHARS.has(state.original)) {
-            buffer[i] = state.original;
+          buffer[i] = state.original;
         } else {
-            const progress =
+          const progress =
             (elapsed - state.gibberishAt) /
             (state.revealAt - state.gibberishAt)
-    
-            const base = 1 - progress
-            const distanceFactor = Math.min(1, Math.abs(i - wavePosition) / 6)
-    
-            const scrambleProbability = Math.max(0.15, base * distanceFactor)
-    
-            if (elapsed >= state.nextCycleAt && Math.random() < scrambleProbability) {
-              state.scrambled = getScrambleChar(state.original, CHARS)
-              state.nextCycleAt = elapsed + randomCycle(cycleInterval, CYCLE_DELTA)
-            }
-            buffer[i] = state.scrambled
+
+          const base = 1 - progress
+          const distanceFactor = Math.min(1, Math.abs(i - wavePosition) / 6)
+
+          const scrambleProbability = Math.max(0.15, base * distanceFactor)
+
+          if (elapsed >= state.nextCycleAt && Math.random() < scrambleProbability) {
+            state.scrambled = getScrambleChar(state.original, CHARS)
+            state.nextCycleAt = elapsed + randomCycle(cycleInterval, CYCLE_DELTA)
+          }
+          buffer[i] = state.scrambled
         }
       } else {
         buffer[i] = "\u00A0"
@@ -175,7 +175,7 @@ export function DecodeTextControlledCycle({
     const output = buffer.join("")
     let animatedNode: ReactNode = output;
     if (isValidElement(children)) {
-        animatedNode = cloneElement(children, {}, output);
+      animatedNode = cloneElement(children, {}, output);
     }
     setContent(animatedNode);
 
@@ -209,7 +209,7 @@ export function DecodeTextControlledCycle({
   const renderWithBrackets = (node: ReactNode) => {
     if (!bracket) return node
     return (
-      <span className="bracket-interactive px-0.5">
+      <span className="bracket-interactive">
         <span className="bracket-accent font-extralight">[</span>
         <span className="bracket-content">{node}</span>
         <span className="bracket-accent font-extralight">]</span>
@@ -218,14 +218,13 @@ export function DecodeTextControlledCycle({
   }
 
   return (
-    <span className={className}>
-      {content === null ? (
-        <span className="opacity-0" aria-hidden="true">
-          {renderWithBrackets(children)}
-        </span>
-      ) : (
-        renderWithBrackets(content)
-      )}
+    <span className={className} style={{ position: 'relative', display: 'inline-block' }}>
+      <span style={{ visibility: 'hidden' }} aria-hidden="true">
+        {renderWithBrackets(children)}
+      </span>
+      <span style={{ position: 'absolute', top: 0, left: 0 }}>
+        {content === null ? null : renderWithBrackets(content)}
+      </span>
     </span>
   )
 }

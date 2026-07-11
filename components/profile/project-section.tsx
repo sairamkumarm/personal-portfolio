@@ -22,14 +22,14 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                     <AnimatedBorder 
                     key={`project-${index}`} 
                     header={project.name} 
-                    delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15)} 
+                    delay={calculateDelay(data.sections.projects.renderIndex, 1, index)} 
                     GlitchComponent={GlitchComponent} 
                     headerClassName='text-xs sm:text-sm text-theme-primary'
                     borderClassName='border-theme-tertiary'
                     >
-                    <div key={`project-${index}`} className="space-y-2">
+                    <div key={`project-${index}`} className="space-y-1">
                         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 lg:gap-4">
-                            <div className="text-xs sm:text-sm tracking-wider flex-1">
+                            <div className="text-xs sm:text-sm flex-1">
                                 <GlitchComponent
                                     delay={calculateDelay(data.sections.projects.renderIndex, 1, index * 15)}
                                     shouldStart={textPhaseActive}
@@ -78,9 +78,9 @@ export function ProjectsSection({ data, textPhaseActive, DEBUG_MODE, calculateDe
                                 ))}
                             </div>
                         </div>
-                        <div className="space-y-2 text-xs sm:text-sm">
+                        <div className="space-y-1 text-xs sm:text-sm">
                             {/* Project Description - Enhanced Responsive */}
-                            <div className="leading-relaxed text-theme-muted font-light tracking-wide space-y-1">
+                            <div className=" text-theme-muted font-light space-y-0.5">
                                 {project.description.length === 1 ? (
                                     // Single item - render as paragraph
                                     <GlitchComponent

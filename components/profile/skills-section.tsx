@@ -19,7 +19,7 @@ export function SkillsSection({ data, textPhaseActive, DEBUG_MODE, calculateDela
             <div className="space-y-4">
                 <div className="space-y-3 text-xs sm:text-sm">
                     {data.skills.categories.map((category, categoryIndex) => (
-                        <div key={`category-${categoryIndex}`} className="space-y-1 lg:space-y-2">
+                        <div key={`category-${categoryIndex}`} className="space-y-1 lg:space-y-1">
                             <div className="text-theme-primary">
                                 <GlitchComponent
                                     delay={calculateDelay(data.skills.renderIndex, 2, categoryIndex * 10)}

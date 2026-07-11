@@ -26,3 +26,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .idx/dev.nix
+.vscode/settings.json

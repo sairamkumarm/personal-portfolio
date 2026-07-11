@@ -22,9 +22,9 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
         <nav className="fixed top-1 left-1 right-1 z-[9999] bg-theme-primary px-0 py-0">
           <AnimatedBorder className='p-2' borderClassName='border-theme-primary'>
           <div>
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs sm:text-sm py-0 gap-2 sm:gap-4">
+            <div className="flex justify-center sm:justify-between items-center text-xs sm:text-sm py-0 gap-2 sm:gap-4 sm:pr-0.5">
               {/* Left side - Title with backdrop blur */}
-              <div className="tracking-wider backdrop-blur-md bg-theme-secondary pr-1 w-fit flex gap-1 items-center">
+              <div className="backdrop-blur-md bg-theme-secondary pr-1 w-fit hidden sm:flex gap-1 items-center ">
                 <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE} className="uppercase">
                   {data.personal_info.name}
                 </GlitchComponent>
@@ -40,8 +40,7 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
               </div>
 
               {/* Right side - Actions with backdrop blur */}
-              <div className="flex gap-2 sm:gap-4 items-center flex-wrap">
-                <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6200}>
+              <div className="flex w-full justify-between sm:w-auto sm:gap-2 items-center">
                 <a
                   href={process.env.NEXT_PUBLIC_RESUME_STATIC_LINK}
                   target="_blank"
@@ -53,19 +52,16 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                     RESUME.PDF
                   </GlitchComponent>
                   </a>
-                </RenderSequence>
-                <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6400}>
                 <a href="mailto:sairamkumar.m@outlook.com" 
                   target="_blank"
                   rel="noopener noreferrer">
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
-                    CONTACT
+                    EMAIL
                   </GlitchComponent>
                   </a>
-                </RenderSequence>
-                <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 6600}>
-                  <ThemeToggle />
-                </RenderSequence>
+                  <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                    <ThemeToggle />
+                  </GlitchComponent>
               </div>
             </div>
           </div>

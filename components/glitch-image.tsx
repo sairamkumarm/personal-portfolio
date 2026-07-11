@@ -9,6 +9,7 @@ interface GlitchImageProps {
   shouldStart?: boolean
   debugMode?: boolean
   className?: string
+  squareSize?: number
 }
 export function GlitchImage({
   src,
@@ -17,6 +18,7 @@ export function GlitchImage({
   shouldStart = true,
   debugMode = false,
   className = "",
+  squareSize,
 }: GlitchImageProps) {
   const [isVisible, setIsVisible] = useState(debugMode)
   const [shouldGlitchIn, setShouldGlitchIn] = useState(false)
@@ -37,11 +39,14 @@ export function GlitchImage({
   }, [delay, shouldStart, debugMode])
 
   return (
-    <div className={`relative overflow-hidden ${className} ${isVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}>
+    <div
+      className={`relative overflow-hidden ${className} ${isVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+      style={squareSize ? { height: `${squareSize}px`, width: `${squareSize}px` } : undefined}
+    >
       <img
         src={src || "/placeholder.svg"}
         alt={alt}
-        className="w-auto object-contain max-h-[190px]"
+        className="h-full w-full object-cover"
       />
       {shouldGlitchIn && !debugMode && (
         <div className="absolute inset-0 glitch-overlay z-10" />

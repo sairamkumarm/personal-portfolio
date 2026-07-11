@@ -18,7 +18,7 @@ export function EducationSection({ data, textPhaseActive, DEBUG_MODE, calculateD
         <AnimatedBorder header="EDUCATION" delay={calculateDelay(data.sections.education.renderIndex)} >
             <div className="space-y-4 ">
                 {data.sections.education.items.map((edu, index) => (
-                    <div key={`edu-${index}`} className="space-y-2">
+                    <div key={`edu-${index}`} className="space-y-1">
                         <div className="text-xs sm:text-sm space-y-1">
                             <div>
                                 <span className="text-theme-primary">

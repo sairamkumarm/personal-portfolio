@@ -27,7 +27,7 @@ export function ExperienceSection({ data, textPhaseActive, DEBUG_MODE, calculate
                         headerClassName='text-xs sm:text-sm text-theme-primary'
                         borderClassName='border-theme-tertiary'
                     >
-                        <div key={`exp-${index}`} className="space-y-2">
+                        <div key={`exp-${index}`} className="space-y-1">
                             <div className="text-xs sm:text-sm space-y-1">
                                 <div className="flex flex-row justify-between sm:gap-4 lg:gap-8">
                                     <span className="text-theme-secondary">
@@ -54,7 +54,7 @@ export function ExperienceSection({ data, textPhaseActive, DEBUG_MODE, calculate
                             </div>
 
                             {/* Experience Description - Enhanced Responsive */}
-                            <div className="text-xs sm:text-sm leading-relaxed font-light text-theme-secondary tracking-wide space-y-1">
+                            <div className="text-xs sm:text-sm leading-relaxed font-light text-theme-secondary space-y-0.5">
                                 {exp.description.length === 1 ? (
                                     // Single item - render as paragraph
                                     <GlitchComponent

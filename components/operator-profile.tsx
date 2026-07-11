@@ -21,10 +21,10 @@ interface OperatorProfileProps {
 const DEBUG_MODE = false
 
 // FIXED: Centralized delay calculation system with stable values
-const SECTION_BASE_DELAY = 300
-const SUBSECTION_DELAY = 150
-const ITEM_DELAY = 50
-const FIELD_DELAY = 150
+const SECTION_BASE_DELAY = 100
+const SUBSECTION_DELAY = 50
+const ITEM_DELAY = 40
+const FIELD_DELAY = 30
 
 // FIXED: Memoized delay calculation functions
 const calculateDelay = (sectionIndex: number, subIndex = 0, itemIndex = 0): number => {
@@ -88,7 +88,7 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
       <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
       {/* Main Content - Multi-column Layout */}
-      <div className="flex-1 pt-20 sm:pt-14 columns-[30rem] pb-4 gap-x-4 space-y-4 px-0 z-60">
+      <div className="flex-1 pt-[8vh] 2xl:pt-[6vh] sm:pt-14 columns-[30rem] pb-4 gap-x-4 space-y-4 px-0 z-60">
         <div className=" break-inside-avoid bg-theme-primary">
           <PersonalInfoSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} GlitchComponent={GlitchComponent} />
         </div>
@@ -96,11 +96,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
         <div className=" break-inside-avoid bg-theme-primary">
           <SkillsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
-        
+
         <div className=" break-inside-avoid bg-theme-primary">
           <EducationSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
-        
+
         <div className=" break-inside-avoid bg-theme-primary">
           <ProjectsSection data={data} textPhaseActive={textPhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} GlitchComponent={GlitchComponent} />
         </div>
@@ -112,15 +112,11 @@ export function OperatorProfile({ data }: OperatorProfileProps) {
 
       {/* Footer - Enhanced Responsive */}
       <RenderSequence phase="interactive" delay={DEBUG_MODE ? 0 : 4500}>
-        <footer className="text-center text-xs sm:text-sm tracking-wider bg-theme-primary">
+        <footer className="text-center text-xs sm:text-sm bg-theme-primary">
           <AnimatedBorder className="p-2">
             <div className="py-0">
-            <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>BUILT WITH <span className="line-through">SPITE</span> LOVE<span className="bracket-accent">]</span></span>
-            <span className="hidden sm:inline text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}> ⁝⁝⁝ </span>
-              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>© 2026 SAIRAMKUMAR M<span className="bracket-accent">]</span></span>
-              <span className="hidden sm:inline text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}> ⁝⁝⁝ </span>
-              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span><span className="line-through">PRECISION</span> OCD ENGINEERED<span className="bracket-accent">]</span></span>
-            </div>
+              <span className="block sm:inline bracket-interactive"><span className="bracket-accent">[</span>COPYRIGHT © 2026 SAIRAMKUMAR M<span className="bracket-accent">]</span></span>
+              </div>
           </AnimatedBorder>
         </footer>
       </RenderSequence>

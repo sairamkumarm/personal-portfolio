@@ -15,7 +15,7 @@ interface AnimatedBorderProps {
   borderClassName?: string;
 }
 
-export function AnimatedBorder({ children, header, delay = 0, className = "p-4", headerClassName = "font-medium", GlitchComponent = GlitchText, borderClassName = "border-theme-secondary" }: AnimatedBorderProps) {
+export function AnimatedBorder({ children, header, delay = 0, className = "p-3", headerClassName = "font-medium", GlitchComponent = GlitchText, borderClassName = "border-theme-secondary" }: AnimatedBorderProps) {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const headerDelay = (delay || 0) + 1000;
 
@@ -39,9 +39,9 @@ export function AnimatedBorder({ children, header, delay = 0, className = "p-4",
         </RenderSequence>
         
         {header && isHeaderVisible && (
-            <div className={`absolute left-2 top-0 -translate-y-1/2 z-20 bg-theme-primary px-2 render-delay-1 ${headerClassName}`}>
+            <div className={`absolute left-2 top-0 -translate-y-1/2 z-20 bg-theme-primary px-1 render-delay-1 ${headerClassName}`}>
               <GlitchComponent>
-                <h2 className=" tracking-wider uppercase text-md">{header}</h2>
+                <h2 className="uppercase text-md">{header}</h2>
               </GlitchComponent>
             </div>
         )}

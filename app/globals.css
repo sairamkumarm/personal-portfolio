@@ -30,8 +30,8 @@
 
   [data-theme="light"] {
     /* Light theme */
-    --bg-primary: #efe6d5;
-    --bg-secondary: rgba(239, 230, 213, 0.8);
+    --bg-primary: #dfddd7;
+    --bg-secondary: #dfddd7;
     --text-primary: #1e101e;
     --text-secondary: #150e15;
     --text-muted: #1f161f;
@@ -40,14 +40,14 @@
     --border-secondary: #1e101eaa;
     --border-tertiary: #1e101e7a;
     --interactive-bg: #000000;
-    --interactive-text: #efe6d5;
+    --interactive-text: #dfddd7;
     --flicker-primary: #1e101e;
     --flicker-secondary: rgba(30, 16, 30 0.3);
     --glitch-flash-bg: #1e101e;
-    --glitch-flash-text: #efe6d5;
+    --glitch-flash-text: #dfddd7;
     --selection-bg: #1e101e;
-    --selection-text: #efe6d5;
-    --scrollbar-track: #efe6d5;
+    --selection-text: #dfddd7;
+    --scrollbar-track: #dfddd7;
     --scrollbar-thumb: #1e101e;
     --scrollbar-thumb-hover: #2a142a;
   }

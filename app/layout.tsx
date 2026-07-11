@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 }
 
 const ThemeInit = () => {
-    const script = `
+  const script = `
       (function() {
         function getInitialTheme() {
           const persistedTheme = window.localStorage.getItem('theme');
@@ -25,11 +25,11 @@ const ThemeInit = () => {
         document.documentElement.setAttribute('data-theme', theme);
       })();
     `;
-  
-    return (
-      <script dangerouslySetInnerHTML={{ __html: script }} />
-    );
-  };
+
+  return (
+    <script dangerouslySetInnerHTML={{ __html: script }} />
+  );
+};
 
 export default function RootLayout({
   children,
@@ -46,6 +46,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
       <body>{children}</body>
     </html>

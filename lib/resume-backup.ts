@@ -12,19 +12,20 @@ export const resumeData: ResumeData = {
     items: [
       { label: "linkedin", url: "https://www.linkedin.com/in/sairamkumarm" },
       { label: "github", url: "https://github.com/sairamkumarm" },
+      { label: "email", url: "mailto:sairamkumar.m@outlook.com" }
     ],
     renderIndex: 2,
   },
   bio: {
     content:
-      "designed for failure. optimized for recovery.",
+      "design for failure. optimize for recovery.",
     renderIndex: 3,
   },
   skills: {
     categories: [
       {
         name: "languages",
-        skills: ["java", "go","python", "bash"],
+        skills: ["java", "go", "python", "bash"],
       },
       {
         name: "frameworks & libraries",
@@ -127,7 +128,7 @@ export const resumeData: ResumeData = {
             "designed prompt flows to tailor resumes to job descriptions through keyword mapping and tone-shifting, while generating dynamic interview questions.",
             "balanced system design with fast iteration on activation, positioning, and feature delivery, shipping a working mvp to early testers."
           ],
-        },
+        }
       ],
       renderIndex: 6,
     },
