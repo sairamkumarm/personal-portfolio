@@ -19,11 +19,6 @@ export const LinksSectionSchema = z.object({
   renderIndex: z.number(),
 });
 
-export const BioSectionSchema = z.object({
-  content: z.string(),
-  renderIndex: z.number(),
-});
-
 export const SkillCategorySchema = z.object({
   name: z.string(),
   skills: z.array(z.string()),
@@ -74,7 +69,6 @@ export const EducationSectionSchema = z.object({
 export const ResumeDataSchema = z.object({
   personal_info: PersonalInfoSchema,
   links: LinksSectionSchema,
-  bio: BioSectionSchema,
   skills: SkillsSectionSchema,
   sections: z.object({
     projects: ProjectsSectionSchema,

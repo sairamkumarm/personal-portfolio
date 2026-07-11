@@ -120,16 +120,16 @@ export function PersonalInfoSection({ data, textPhaseActive, DEBUG_MODE, calcula
                         </div>
                     </div>
 
-                    {/* Col 2: Photo + Links (phones) / Photo only (lg+) */}
+                    {/* Col 2: Photo */}
                     <div className=" flex flex-col items-end">
                         <GlitchImage
                             src="images/formal_profile.jpeg"
-                            alt="Profile"
+                            alt="Profile picture, credit: Balaji Lakshman Reddy Karri"
                             delay={calculateFieldDelay(data.personal_info.renderIndex, 4)}
                             shouldStart={textPhaseActive}
                             debugMode={DEBUG_MODE}
                             squareSize={textColumnHeight || undefined}
-                            className=" profile-image-bw"
+                            className="profile-image-bw"
                         />
                     </div>
                 </div>

@@ -16,11 +16,6 @@ export const resumeData: ResumeData = {
     ],
     renderIndex: 2,
   },
-  bio: {
-    content:
-      "design for failure. optimize for recovery.",
-    renderIndex: 3,
-  },
   skills: {
     categories: [
       {
@@ -53,19 +48,8 @@ export const resumeData: ResumeData = {
           "insomnia",
         ],
       },
-      {
-        name: "concepts",
-        skills: [
-          "data structures & algorithms",
-          "oop",
-          "aop",
-          "microservices",
-          "event-driven architecture",
-          "rest apis",
-        ],
-      },
     ],
-    renderIndex: 4,
+    renderIndex: 3,
   },
   sections: {
     projects: {
@@ -113,7 +97,7 @@ export const resumeData: ResumeData = {
           ]
         },
       ],
-      renderIndex: 5,
+      renderIndex: 4,
     },
     experience: {
       items: [
@@ -130,7 +114,7 @@ export const resumeData: ResumeData = {
           ],
         }
       ],
-      renderIndex: 6,
+      renderIndex: 5,
     },
     education: {
       items: [
@@ -141,7 +125,7 @@ export const resumeData: ResumeData = {
           grade: "9.24"
         },
       ],
-      renderIndex: 7,
+      renderIndex: 6,
     },
   },
 }

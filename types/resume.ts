@@ -16,11 +16,6 @@ export interface LinksSection {
   renderIndex: number
 }
 
-export interface BioSection {
-  content: string
-  renderIndex: number
-}
-
 export interface SkillCategory {
   name: string
   skills: string[]
@@ -71,7 +66,6 @@ export interface EducationSection {
 export interface ResumeData {
   personal_info: PersonalInfo
   links: LinksSection
-  bio: BioSection
   skills: SkillsSection
   sections: {
     projects: ProjectsSection
