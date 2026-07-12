@@ -3,12 +3,14 @@
 import { useState, useEffect, useMemo } from "react"
 import type { ResumeData } from "@/types/resume"
 import { ProfileHeader } from "./profile-header"
-import { RenderedProfile } from "./rendered-profile/rendered-profile"
-import { DecodeTextControlledCycle } from "./decode-text-controlled-cycle"
+import { ProfileContent } from "./profile-content"
+import { DecodeTextControlledCycle } from "./animation-components/decode-text-controlled-cycle"
 import { ProfileFooter } from "./profile-footer"
+import { ContentKey } from "@/types/types"
 
 interface PageContentProps {
     data: ResumeData
+    contentKey?: ContentKey
 }
 
 // DEBUG MODE toggle
@@ -30,7 +32,8 @@ const calculateFieldDelay = (sectionIndex: number, fieldIndex: number): number =
     return sectionIndex * SECTION_BASE_DELAY + fieldIndex * FIELD_DELAY
 }
 
-export function PageContent({ data }: PageContentProps) {
+
+export function PageContent({ data, contentKey = "profile" }: PageContentProps) {
     const [currentPhase, setCurrentPhase] = useState<"lines" | "text" | "interactive">(DEBUG_MODE ? "interactive" : "lines")
 
     const GlitchComponent = DecodeTextControlledCycle
@@ -62,7 +65,15 @@ export function PageContent({ data }: PageContentProps) {
 
             <ProfileHeader data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
 
-            <RenderedProfile data={data} textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} calculateDelay={calculateDelay} calculateFieldDelay={calculateFieldDelay} />
+            <ProfileContent
+                data={data}
+                contentKey={contentKey}
+                textPhaseActive={textPhaseActive}
+                interactivePhaseActive={interactivePhaseActive}
+                DEBUG_MODE={DEBUG_MODE}
+                calculateDelay={calculateDelay}
+                calculateFieldDelay={calculateFieldDelay}
+            />
 
             <ProfileFooter textPhaseActive={textPhaseActive} interactivePhaseActive={interactivePhaseActive} DEBUG_MODE={DEBUG_MODE} GlitchComponent={GlitchComponent} />
         </div>

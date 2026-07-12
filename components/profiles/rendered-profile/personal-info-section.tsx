@@ -2,8 +2,8 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react';
-import { GlitchImage } from "../glitch-image";
-import { AnimatedBorder } from '../animated-border';
+import { GlitchImage } from "../../animation-components/glitch-image";
+import { AnimatedBorder } from '../../animation-components/animated-border';
 import { ResumeData } from "@/types/resume";
 
 interface PersonalInfoProps {

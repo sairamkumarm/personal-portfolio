@@ -2,7 +2,7 @@
 "use client"
 
 import type React from 'react';
-import { AnimatedBorder } from "../animated-border";
+import { AnimatedBorder } from "../../animation-components/animated-border";
 import { ResumeData } from "@/types/resume";
 
 interface SkillsSectionProps {

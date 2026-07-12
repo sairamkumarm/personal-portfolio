@@ -1,11 +1,48 @@
 "use client"
 
-interface ProfileContentProps{
-    content: React.ElementType
+import type { ComponentType } from "react"
+import type { ResumeData } from "@/types/resume"
+import { RenderedProfile } from "./profiles/rendered-profile/rendered-profile"
+import { PlaceholderProfile } from "./profiles/placeholder-profile"
+import { ContentKey } from "@/types/types"
+
+
+interface ProfileContentProps {
+    data: ResumeData
+    contentKey: ContentKey
+    textPhaseActive: boolean
+    interactivePhaseActive: boolean
+    DEBUG_MODE: boolean
+    calculateDelay: (sectionIndex: number, subIndex?: number, itemIndex?: number) => number
+    calculateFieldDelay: (sectionIndex: number, fieldIndex: number) => number
 }
 
-export function ProfileContent({content} : ProfileContentProps){
-    return(
-        content
+const contentRegistry: Record<ContentKey, ComponentType<any>> = {
+    profile: RenderedProfile,
+    placeholder: PlaceholderProfile,
+}
+
+export function ProfileContent({
+    data,
+    contentKey,
+    textPhaseActive,
+    interactivePhaseActive,
+    DEBUG_MODE,
+    calculateDelay,
+    calculateFieldDelay,
+}: ProfileContentProps) {
+    const ActiveContent = contentRegistry[contentKey]
+
+    return (
+        <div className="flex flex-grow flex-col">
+            <ActiveContent
+                data={data}
+                textPhaseActive={textPhaseActive}
+                interactivePhaseActive={interactivePhaseActive}
+                DEBUG_MODE={DEBUG_MODE}
+                calculateDelay={calculateDelay}
+                calculateFieldDelay={calculateFieldDelay}
+            />
+        </div>
     )
 }

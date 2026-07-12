@@ -1,6 +1,6 @@
 "use client"
-import { AnimatedBorder } from "./animated-border";
-import { RenderSequence } from "./render-sequence";
+import { AnimatedBorder } from "./animation-components/animated-border";
+import { RenderSequence } from "./animation-components/render-sequence";
 
 interface ProfileFooterProps {
     textPhaseActive: boolean;

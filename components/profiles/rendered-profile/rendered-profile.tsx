@@ -4,7 +4,7 @@
 import type { ResumeData } from "@/types/resume"
 import { ProjectsSection } from "./project-section"
 import { ExperienceSection } from "./experience-section"
-import { DecodeTextControlledCycle } from "../decode-text-controlled-cycle"
+import { DecodeTextControlledCycle } from "../../animation-components/decode-text-controlled-cycle"
 import { PersonalInfoSection } from "./personal-info-section"
 import { SkillsSection } from "./skills-section"
 import { EducationSection } from "./education-section"

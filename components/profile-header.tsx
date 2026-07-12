@@ -2,25 +2,25 @@
 "use client"
 
 import type React from 'react';
-import { RenderSequence } from "./render-sequence";
+import { RenderSequence } from "./animation-components/render-sequence";
 import { ThemeToggle } from "./theme-toggle";
 import { ResumeData } from "@/types/resume";
-import { AnimatedBorder } from './animated-border';
+import { AnimatedBorder } from './animation-components/animated-border';
 
 interface ProfileHeaderProps {
-    data: ResumeData;
-    textPhaseActive: boolean;
-    interactivePhaseActive: boolean;
-    DEBUG_MODE: boolean;
-    GlitchComponent: React.ElementType;
+  data: ResumeData;
+  textPhaseActive: boolean;
+  interactivePhaseActive: boolean;
+  DEBUG_MODE: boolean;
+  GlitchComponent: React.ElementType;
 }
 
 export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, DEBUG_MODE, GlitchComponent }: ProfileHeaderProps) {
 
-    return (
-        <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 0}>
-        <nav className="fixed top-1 left-1 right-1 z-[9999] bg-theme-primary px-0 py-0">
-          <AnimatedBorder className='p-2' borderClassName='border-theme-primary'>
+  return (
+    <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 0}>
+      <nav className="fixed top-1 left-1 right-1 z-[9999] bg-theme-primary px-0 py-0">
+        <AnimatedBorder className='p-2' borderClassName='border-theme-primary'>
           <div>
             <div className="flex justify-center sm:justify-between items-center text-xs sm:text-sm py-0 gap-2 sm:gap-4 sm:pr-0.5">
               {/* Left side - Title with backdrop blur */}
@@ -34,9 +34,9 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                     <span className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       ⁝⁝⁝
                     </span>{" "}
-                  <GlitchComponent delay={0} debugMode={DEBUG_MODE} className="" shouldStart={textPhaseActive}>
-                    <span className="text-theme-secondary">PROFILE</span>
-                  </GlitchComponent>
+                    <GlitchComponent delay={0} debugMode={DEBUG_MODE} className="" shouldStart={textPhaseActive}>
+                      <span className="text-theme-secondary">PROFILE</span>
+                    </GlitchComponent>
                   </GlitchComponent>
                 </span>
               </div>
@@ -53,23 +53,23 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     RESUME.PDF
                   </GlitchComponent>
-                  </a>
-                <a href="mailto:sairamkumar.m@outlook.com" 
+                </a>
+                <a href="mailto:sairamkumar.m@outlook.com"
                   target="_blank"
                   rel="noopener noreferrer">
                   <GlitchComponent bracket delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                     EMAIL
                   </GlitchComponent>
-                  </a>
-                  <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
-                    <ThemeToggle />
-                  </GlitchComponent>
+                </a>
+                <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                  <ThemeToggle />
+                </GlitchComponent>
               </div>
             </div>
           </div>
-          </AnimatedBorder>
+        </AnimatedBorder>
 
-        </nav>
-      </RenderSequence>
-    )
+      </nav>
+    </RenderSequence>
+  )
 }
