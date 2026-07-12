@@ -3,8 +3,8 @@
 import type { ComponentType } from "react"
 import type { ResumeData } from "@/types/resume"
 import { RenderedProfile } from "./profiles/rendered-profile/rendered-profile"
-import { PlaceholderProfile } from "./profiles/placeholder-profile"
-import { ContentKey } from "@/types/types"
+import { JsonProfile } from "./profiles/json-profile"
+import { type ContentKey } from "@/types/types"
 
 
 interface ProfileContentProps {
@@ -19,7 +19,7 @@ interface ProfileContentProps {
 
 const contentRegistry: Record<ContentKey, ComponentType<any>> = {
     profile: RenderedProfile,
-    placeholder: PlaceholderProfile,
+    json: JsonProfile,
 }
 
 export function ProfileContent({

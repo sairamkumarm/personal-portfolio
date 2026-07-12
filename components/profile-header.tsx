@@ -2,10 +2,13 @@
 "use client"
 
 import type React from 'react';
+import { useRouter, useSearchParams } from "next/navigation";
 import { RenderSequence } from "./animation-components/render-sequence";
 import { ThemeToggle } from "./theme-toggle";
+import { ViewToggle } from "./view-toggle";
 import { ResumeData } from "@/types/resume";
 import { AnimatedBorder } from './animation-components/animated-border';
+import { resolveContentKey, VIEW_OPTIONS, type ContentKey } from '@/types/types';
 
 interface ProfileHeaderProps {
   data: ResumeData;
@@ -16,6 +19,17 @@ interface ProfileHeaderProps {
 }
 
 export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, DEBUG_MODE, GlitchComponent }: ProfileHeaderProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const currentView = resolveContentKey(searchParams.get("view"));
+  const viewOptions = VIEW_OPTIONS;
+
+  const handleViewChange = (nextView: ContentKey) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("view", nextView);
+    router.push(`/?${params.toString()}`);
+  };
 
   return (
     <RenderSequence phase="lines" delay={DEBUG_MODE ? 0 : 0}>
@@ -34,8 +48,12 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                     <span className="text-theme-accent" style={{ fontFamily: "SF Mono, Monaco, Consolas, monospace" }}>
                       ⁝⁝⁝
                     </span>{" "}
-                    <GlitchComponent delay={0} debugMode={DEBUG_MODE} className="" shouldStart={textPhaseActive}>
-                      <span className="text-theme-secondary">PROFILE</span>
+                    <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                      <ViewToggle
+                        currentValue={currentView}
+                        options={viewOptions}
+                        onChange={handleViewChange}
+                      />
                     </GlitchComponent>
                   </GlitchComponent>
                 </span>
@@ -61,6 +79,15 @@ export function ProfileHeader({ data, textPhaseActive, interactivePhaseActive, D
                     EMAIL
                   </GlitchComponent>
                 </a>
+                <div className="sm:hidden">
+                  <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
+                    <ViewToggle
+                      currentValue={currentView}
+                      options={viewOptions}
+                      onChange={handleViewChange}
+                    />
+                  </GlitchComponent>
+                </div>
                 <GlitchComponent delay={0} shouldStart={textPhaseActive} debugMode={DEBUG_MODE}>
                   <ThemeToggle />
                 </GlitchComponent>

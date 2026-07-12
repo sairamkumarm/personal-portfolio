@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @layer base {
+
   :root {
     /* Dark theme (default) */
     --bg-primary: #000000;
@@ -72,9 +73,10 @@
 
 /* Custom scrollbar for the ops aesthetic */
 ::-webkit-scrollbar {
-  width: 4px;
+  display: none;
+  /* width: 4px; */
 }
-
+/* 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
 }
@@ -86,7 +88,7 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover);
-}
+} */
 
 /* Selection styling */
 ::selection {

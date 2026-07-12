@@ -41,7 +41,7 @@ export function AnimatedBorder({ children, header, delay = 0, className = "p-3",
       {header && isHeaderVisible && (
         <div className={`absolute left-2 top-0 -translate-y-1/2 z-20 bg-theme-primary px-1 render-delay-1 ${headerClassName}`}>
           <GlitchComponent>
-            <h2 className="uppercase text-md">{header}</h2>
+            <h2 className="uppercase">{header}</h2>
           </GlitchComponent>
         </div>
       )}
