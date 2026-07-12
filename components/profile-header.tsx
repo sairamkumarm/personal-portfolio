@@ -2,10 +2,10 @@
 "use client"
 
 import type React from 'react';
-import { RenderSequence } from "../render-sequence";
-import { ThemeToggle } from "../theme-toggle";
+import { RenderSequence } from "./render-sequence";
+import { ThemeToggle } from "./theme-toggle";
 import { ResumeData } from "@/types/resume";
-import { AnimatedBorder } from '../animated-border';
+import { AnimatedBorder } from './animated-border';
 
 interface ProfileHeaderProps {
     data: ResumeData;

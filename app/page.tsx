@@ -1,7 +1,7 @@
-import { OperatorProfile } from "@/components/operator-profile";
 import { loadResumeData } from "@/lib/resume-loader";
+import { PageContent } from "@/components/page-content";
 
 export default async function Home() {
   const resumeData = await loadResumeData();
-  return <OperatorProfile data={resumeData} />;
+  return <PageContent data={resumeData} />;
 }

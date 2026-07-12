@@ -32,9 +32,9 @@ export function AnimatedBorder({ children, header, delay = 0, className = "p-3",
         <RenderSequence phase="lines" delay={delay}>
             <div className={`absolute inset-0 pointer-events-none`}>
                 <div className={`absolute top-0 left-0 w-full border-t border-build ${borderClassName}`} style={{ animationDelay: `${delay}ms`, transformOrigin: 'left' }}/>
-                <div className={`absolute top-0 right-0 h-full border-r vertical-line-build ${borderClassName}`} style={{ animationDelay: `${delay + 250}ms`, transformOrigin: 'top' }}/>
+                <div className={`absolute top-[1px] right-0 h-[calc(100%-2px)] border-r vertical-line-build ${borderClassName}`} style={{ animationDelay: `${delay + 250}ms`, transformOrigin: 'top' }}/>
                 <div className={`absolute bottom-0 right-0 w-full border-b border-build ${borderClassName}`} style={{ animationDelay: `${delay + 500}ms`, transformOrigin: 'right' }}/>
-                <div className={`absolute bottom-0 left-0 h-full border-l vertical-line-build ${borderClassName}`} style={{ animationDelay: `${delay + 750}ms`, transformOrigin: 'bottom' }}/>
+                <div className={`absolute bottom-[1px] left-0 h-[calc(100%-2px)] border-l vertical-line-build ${borderClassName}`} style={{ animationDelay: `${delay + 750}ms`, transformOrigin: 'bottom' }}/>
             </div>
         </RenderSequence>
         
