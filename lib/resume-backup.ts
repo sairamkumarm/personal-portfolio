@@ -3,7 +3,7 @@ import type { ResumeData } from "@/types/resume"
 export const resumeData: ResumeData = {
   personal_info: {
     name: "sairamkumar m",
-    location: "bengaluru, india",
+    location: "bengaluru, in",
     role: "backend engineer",
     contact: "sairamkumar.m@outlook.com",
     renderIndex: 1,
