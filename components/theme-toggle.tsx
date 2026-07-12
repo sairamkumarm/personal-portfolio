@@ -20,7 +20,6 @@ export function ThemeToggle({ className = "" }: ThemeToggleProps) {
       <span className="bracket-content">{theme === "dark" ? "LIGHT" : "DARK"}</span>
       <span className="bracket-accent">]</span>
     </span>
-     
     </button>
   )
 }
